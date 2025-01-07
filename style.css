@@ -115,7 +115,8 @@ a {
     transition: 0.3s, background-size 0.5s 0.3s;
 }
 
-.sides-6:hover {
+.sides-6:hover,
+.sides-6.active {
     --d: calc(100% - var(--s));
     --x: 0;
     --y: var(--s);
@@ -701,13 +702,21 @@ section.active {
     border-radius: 50%;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #EAB62D;
-} */
+}
+
+.home::-webkit-scrollbar {
+    /* overflow: scroll;
+    overflow-y: unset;
+    overflow-x: unset; */
+    width: 1px;
+    height: 1px;
+}
 
 .resume-detail.skills .resume-list {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
