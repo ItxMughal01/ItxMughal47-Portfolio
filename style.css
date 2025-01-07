@@ -459,10 +459,10 @@ section.active {
 }
 
 .home-img .img-box .img-item img {
-    position: absolute;
+    /* position: absolute; */
     display: block;
-    top: 45px;
-    width: 85%;
+    /* top: 45px; */
+    /* width: 85%; */
     object-fit: cover;
     mix-blend-mode: lighten;
 }
@@ -701,13 +701,13 @@ section.active {
     border-radius: 50%;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #EAB62D;
-}
+} */
 
 .resume-detail.skills .resume-list {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -884,7 +884,7 @@ section.active {
 
 @media screen and (max-width: 778px) {
     #menu-icon {
-        display: block;
+        display: inline-block;
     }
 
     nav {
@@ -938,8 +938,8 @@ section.active {
 
 @media screen and (max-width: 600px) {
     .home-img .img-box {
-        width: 20rem;
-        height: 20rem;
+        width: 15rem;
+        height: 15rem;
     }
 
     .contact-box .field-box {
@@ -982,5 +982,20 @@ section.active {
 
     .contact-box h2 {
         font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 385px) {
+
+    .home-info h2 {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .img-item .img07 {
+        width: 15.5rem;
+        height: 25rem;
+        padding-bottom: 90px;
+        object-fit: cover;
     }
 }
