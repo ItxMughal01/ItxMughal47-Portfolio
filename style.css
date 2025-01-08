@@ -947,6 +947,10 @@ section.active {
     .sci a {
         padding: 10px 10px;
     }
+
+    html {
+        font-size: 55%;
+    }
 }
 
 @media screen and (max-width: 1200px) {
