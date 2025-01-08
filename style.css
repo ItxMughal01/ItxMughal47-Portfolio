@@ -546,10 +546,24 @@ section.active {
     display: none;
 }
 
+.services .heading {
+    background-color: rgba(0, 0, 0, .6);
+    border: 5px outset #EAB62D;
+    box-shadow: 0 0 10px #EAB62D;
+    margin-left: 36.5%;
+    display: inline-block;
+}
+
 .heading {
     font-size: 4.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
+    padding-bottom: 1rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+    /* display: inline-block; */
+    /* margin-left: 36.5%; */
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .heading span {
@@ -661,6 +675,7 @@ section.active {
 .resume-box h2 {
     color: #fff;
     font-size: 3.2rem;
+    margin-top: 1.5rem;
 }
 
 .resume-item p {
@@ -688,6 +703,15 @@ section.active {
     border-radius: .8rem;
     cursor: pointer;
     text-shadow: 0 0 20px #EAB62D;
+}
+
+.resume-detail .heading {
+     background-color: rgba(0, 0, 0, .6);
+     padding-top: 5px;
+     border: 5px outset #EAB62D;
+     box-shadow: 0 0 10px #EAB62D;
+     display: inline-block;
+     margin-left: 31%;
 }
 
 .resume-box .resume-btn.active {
@@ -855,9 +879,22 @@ section.active {
     align-self: center;
 }
 
-.contact-box h2 {
+.contact-box .h2 {
     font-size: 4.2rem;
     color: #fff;
+    display: inline-block;
+}
+
+.contact-box .h22 {
+    font-size: 4.2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .6);
+    padding-left: 25px;
+    margin-right: 20px;
+    padding-bottom: 8px;
+    border: 5px outset #EAB62D;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #EAB62D;
 }
 
 .contact-box p {
@@ -866,13 +903,17 @@ section.active {
 }
 
 .contact-box .desc {
-    margin: 1.5rem0 2.5rem;
+    margin: 1.5rem 2.5rem;
 }
 
 .contact-box .contact-detail {
     display: flex;
     align-items: center;
     margin: 2rem 0;
+}
+
+.contact-box .work {
+    color: #EAB62D;
 }
 
 .contact-detail i {
@@ -893,7 +934,7 @@ section.active {
     background: #000000;
     padding: 2.5rem 3.5rem 3.5rem;
     border-radius: 1rem;
-    border: .5px solid white;
+    border: 5px outset white;
     text-align: center;
 }
 
