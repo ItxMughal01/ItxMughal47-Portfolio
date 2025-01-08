@@ -935,7 +935,7 @@ section.active {
     background: #1f242d;
     color: #fff;
 }
-
+/* 
 @media screen and (max-width: 1350px) {
 
     .home-info .name,
@@ -951,7 +951,7 @@ section.active {
     html {
         font-size: 55%;
     }
-}
+} */
 
 @media screen and (max-width: 1200px) {
     html {
