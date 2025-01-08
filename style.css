@@ -12,14 +12,41 @@ body {
     color: #fff;
 }
 
+.logo {
+    text-shadow: 0 0 10px white;
+}
+
+.double-8 {
+    padding-bottom:15px;
+    background:
+      linear-gradient(90deg,currentColor calc(50% - 5px),#0000 0 calc(50% + 5px),currentColor 0) bottom 8px left 0/100% 2px,
+      linear-gradient(90deg,currentColor calc(50% - 5px),#0000 0 calc(50% + 5px),currentColor 0) bottom 4px  left 0/100% 2px,
+ 
+      linear-gradient( 45deg,#0000 calc(50% - 1px),currentColor 0 calc(50% + 1px),#0000 0) left  calc(50% + 2.5px) bottom 8px/6px 6px,
+      linear-gradient(-45deg,#0000 calc(50% - 1px),currentColor 0 calc(50% + 1px),#0000 0) right calc(50% + 2.5px) bottom 8px/6px 6px,
+ 
+      linear-gradient( 45deg,#0000 calc(50% - 1px),currentColor 0 calc(50% + 1px),#0000 0) right calc(50% + 2.5px) bottom 0  /6px 6px,
+      linear-gradient(-45deg,#0000 calc(50% - 1px),currentColor 0 calc(50% + 1px),#0000 0) left  calc(50% + 2.5px) bottom 0  /6px 6px;
+    background-repeat: no-repeat;
+    -webkit-mask:
+       linear-gradient(#000 0 0) top    /100% calc(100% - 14px),
+       linear-gradient(#000 0 0) bottom left/var(--p,0%) 14px,
+       linear-gradient(#000 0 0) bottom right/var(--p,0%) 14px;
+    -webkit-mask-repeat: no-repeat;
+    transition: 0.5s; 
+  }
+  .double-8:hover {
+    --p:50.1%;
+}
+
 .social1 {
     display: inline-flex;
     padding: 10px;
-    border: 2px inset white;
+    border: 5px inset white;
     border-radius: 50%;
     font-size: 20px;
-    background-color: purple;
-    color: #fff;
+    color: #EAB62D;
+    background: transparent;
     /* margin: 0 8px; */
     transition: .5s;
 }
@@ -27,11 +54,11 @@ body {
 .social2 {
     display: inline-flex;
     padding: 10px;
-    border: 2px inset white;
+    border: 5px inset white;
     border-radius: 50%;
     font-size: 20px;
-    color: #fff;
-    background: darkblue;
+    color: #EAB62D;
+    background: transparent;
     /* margin: 0 8px; */
     transition: .5s;
 }
@@ -39,11 +66,11 @@ body {
 .social3 {
     display: inline-flex;
     padding: 10px;
-    border: 2px inset white;
+    border: 5px inset white;
     border-radius: 50%;
     font-size: 20px;
-    color: #fff;
-    background-color: rgb(82, 202, 249);
+    color: #EAB62D;
+    background-color: transparent;
     /* margin: 0 8px; */
     transition: .5s;
 }
@@ -51,11 +78,11 @@ body {
 .social4 {
     display: inline-flex;
     padding: 10px;
-    border: 2px inset white;
+    border: 5px inset white;
     border-radius: 50%;
     font-size: 20px;
-    color: #fff;
-    background-color: red;
+    color: #EAB62D;
+    background-color: transparent;
     /* margin: 0 8px; */
     transition: .5s;
 }
@@ -63,7 +90,7 @@ body {
 .social1:hover {
     background: purple;
     color: #ffffff;
-    box-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 15px #fff;
     scale: 1.4;
 }
 
@@ -123,7 +150,7 @@ a {
     transition: 0.5s, background-position 0.3s 0.5s;
 }
 
-.sixtyfour-uniquifier {
+/* .sixtyfour-uniquifier {
     font-family: "Sixtyfour", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -131,7 +158,7 @@ a {
     font-variation-settings:
         "BLED" 0,
         "SCAN" 0;
-}
+} 
 
 /* a::after {
     content: "";
@@ -164,11 +191,12 @@ header {
     z-index: 100;
     visibility: hidden;
     opacity: 0;
-    animation: show-content 1.5s linear forwards;
     animation-delay: 1.2s;
     border: 4px outset grey;
+    box-shadow: 0 0 30px #fff;
     background-color: rgba(0, 0, 0, .5);
     border-radius: 10px;
+    animation: show-content 1.5s linear forwards;
 }
 
 @keyframes show-content {
@@ -584,7 +612,21 @@ section.active {
 .style {
     color: #fff;
 }
+/* 
+.services .servic {
+    font-size: 72px;
+}
 
+.servic:nth-child(1) {
+    color: transparent;
+    text-shadow: 0 0 1px #EAB62D;
+    -webkit-text-stroke: 2px #EAB62D;
+}
+
+.servics:nth-child(2) {
+    color: #EAB62D;
+    animation: animate 1s ease-in infinite;
+} */
 /* .arrow:hover {
     background-color: #EAB62D;
 } */
@@ -658,13 +700,13 @@ section.active {
 }
 
 .resume-list::-webkit-scrollbar-thumb {
-    background: transparent;
+    background: #EAB62D;
     border-radius: 1rem;
 }
-
+/* 
 .resume-list:hover::-webkit-scrollbar-thumb {
     background: #EAB62D;
-}
+} */
 
 .resume-list .resume-item {
     background: #000000;
