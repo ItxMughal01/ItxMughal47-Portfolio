@@ -12,8 +12,25 @@ body {
     color: #fff;
 }
 
+.circle {
+    width: 21px;
+    height: 21px;
+    border-radius: 21px;
+    background-color: #EAB62D;
+    box-shadow: 0 0 10px white,
+        0 0 100px white,
+        0 0 50px white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .logo {
     text-shadow: 0 0 10px white;
+}
+
+html {
+    cursor: none;
 }
 
 .social1 {
@@ -65,22 +82,22 @@ body {
 }
 
 .social1:hover {
-    background: purple;
-    color: #ffffff;
+    background: rgb(0, 0, 0);
+    color: #EAB62D;
     box-shadow: 0 0 15px #fff;
     scale: 1.4;
 }
 
 .social2:hover {
-    background: darkblue;
-    color: #fff;
+    background: rgb(0, 0, 0);
+    color: #EAB62D;
     box-shadow: 0 0 10px #fff;
     scale: 1.4;
 }
 
 .social3:hover {
-    background: skyblue;
-    color: #fff;
+    background: rgb(0, 0, 0);
+    color: #EAB62D;
     box-shadow: 0 0 10px #ffff;
     scale: 1.4;
 }
@@ -376,7 +393,7 @@ section.active {
 }
 
 .btn {
-    display: inline-block;
+    /* display: inline-block;
     padding: 10px 30px;
     background: #EAB62D;
     border-radius: 40px;
@@ -385,15 +402,41 @@ section.active {
     font-size: 16px;
     color: #1f242d;
     font-weight: 600;
-    transition: .5s;
+    transition: .5s; */
+    position: relative;
+    overflow: hidden;
+    padding: .8rem 2.5rem;
+    font-weight: 900;
+    height: 3rem;
+    border: 1px solid white;
+    border-radius: 1.5rem;
+    background: transparent;
+    color: ;
+    transition: background 0.475s;
 }
 
-.btn:hover {
-    background: transparent;
+.btn::before {
+    /* background: transparent;
     color: #EAB62D;
     box-shadow: 0 0 10px #EAB62D;
-    scale: 1.1;
+    scale: 1.1; */
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: inherit;
+    background: linear-gradient(82.3deg, orange 10.8%, #EAB62D 94.3%, orange);
+    transition: transform 0.475s;
+}
 
+.btn:hover::before {
+    transform: scaleX(1);
+    box-shadow: 0 0 20px white;
+}
+
+.btn span {
+    position: relative;
 }
 
 .home-info .btn-sci .sci {
@@ -589,6 +632,7 @@ section.active {
 .style {
     color: #fff;
 }
+
 /* 
 .services .servic {
     font-size: 72px;
@@ -680,6 +724,7 @@ section.active {
     background: #EAB62D;
     border-radius: 1rem;
 }
+
 /* 
 .resume-list:hover::-webkit-scrollbar-thumb {
     background: #EAB62D;
@@ -887,6 +932,8 @@ section.active {
 .contact-box .btn {
     margin-top: 1.7rem;
     cursor: pointer;
+    background: #1f242d;
+    color: #fff;
 }
 
 @media screen and (max-width: 1350px) {
