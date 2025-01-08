@@ -16,29 +16,6 @@ body {
     text-shadow: 0 0 10px white;
 }
 
-.double-8 {
-    padding-bottom:15px;
-    background:
-      linear-gradient(90deg,currentColor calc(50% - 5px),#0000 0 calc(50% + 5px),currentColor 0) bottom 8px left 0/100% 2px,
-      linear-gradient(90deg,currentColor calc(50% - 5px),#0000 0 calc(50% + 5px),currentColor 0) bottom 4px  left 0/100% 2px,
- 
-      linear-gradient( 45deg,#0000 calc(50% - 1px),currentColor 0 calc(50% + 1px),#0000 0) left  calc(50% + 2.5px) bottom 8px/6px 6px,
-      linear-gradient(-45deg,#0000 calc(50% - 1px),currentColor 0 calc(50% + 1px),#0000 0) right calc(50% + 2.5px) bottom 8px/6px 6px,
- 
-      linear-gradient( 45deg,#0000 calc(50% - 1px),currentColor 0 calc(50% + 1px),#0000 0) right calc(50% + 2.5px) bottom 0  /6px 6px,
-      linear-gradient(-45deg,#0000 calc(50% - 1px),currentColor 0 calc(50% + 1px),#0000 0) left  calc(50% + 2.5px) bottom 0  /6px 6px;
-    background-repeat: no-repeat;
-    -webkit-mask:
-       linear-gradient(#000 0 0) top    /100% calc(100% - 14px),
-       linear-gradient(#000 0 0) bottom left/var(--p,0%) 14px,
-       linear-gradient(#000 0 0) bottom right/var(--p,0%) 14px;
-    -webkit-mask-repeat: no-repeat;
-    transition: 0.5s; 
-  }
-  .double-8:hover {
-    --p:50.1%;
-}
-
 .social1 {
     display: inline-flex;
     padding: 10px;
