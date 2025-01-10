@@ -548,8 +548,10 @@ section.active {
     background-color: rgba(0, 0, 0, .6);
     border: 5px outset #EAB62D;
     box-shadow: 0 0 10px #EAB62D;
-    margin-left: 36.5%;
-    display: inline-block;
+    /* margin-left: 36.5%; */
+    text-align: center;
+    margin-top: 20px;
+    display: block;
 }
 
 .heading {
@@ -645,11 +647,6 @@ section.active {
     color: #fff;
 }
 
-.services .hyyy {
-    margin-top: 20px;
-    margin-left: -5%;
-}
-
 /* 
 .services .servic {
     font-size: 72px;
@@ -713,8 +710,8 @@ section.active {
      padding-top: 5px;
      border: 5px outset #EAB62D;
      box-shadow: 0 0 10px #EAB62D;
-     display: inline-block;
-     margin-left: 31%;
+     display: block;
+     padding-left: 20%;
 }
 
 .resume-box .resume-btn.active {
@@ -793,7 +790,7 @@ section.active {
     margin-left: -2rem;
     border-radius: 50%;
 }
-
+/* 
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -803,11 +800,19 @@ section.active {
 }
 
 .home::-webkit-scrollbar {
-    /* overflow: scroll;
+    overflow: scroll;
     overflow-y: unset;
-    overflow-x: unset; */
+    overflow-x: unset;
     width: 1px;
     height: 1px;
+} */
+
+::-webkit-scrollbar {
+    color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    color: transparent;
 }
 
 .resume-detail.skills .resume-list {
@@ -979,7 +984,7 @@ section.active {
 
 .contact-box .btn {
     margin-top: 1.7rem;
-    padding-top: 6px;
+    padding-top: 13px;
     cursor: pointer;
     background: #1f242d;
     color: #fff;
