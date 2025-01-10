@@ -550,7 +550,7 @@ section.active {
     box-shadow: 0 0 10px #EAB62D;
     /* margin-left: 36.5%; */
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
     display: block;
 }
 
@@ -675,7 +675,7 @@ section.active {
 .resume-box h2 {
     color: #fff;
     font-size: 3.2rem;
-    margin-top: 1.5rem;
+    margin-top: 1.9rem;
 }
 
 .resume-item p {
