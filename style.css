@@ -10,6 +10,7 @@
 body {
     background: black;
     color: #fff;
+    height: 100vh;
 }
 
 .circle {
