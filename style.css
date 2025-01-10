@@ -675,7 +675,11 @@ section.active {
 .resume-box h2 {
     color: #fff;
     font-size: 3.2rem;
-    margin-top: 1.9rem;
+    margin-top: 1.5rem;
+}
+
+.resume-box .me {
+    margin-top: 1.8rem;
 }
 
 .resume-item p {
