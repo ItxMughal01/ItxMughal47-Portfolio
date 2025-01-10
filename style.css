@@ -172,7 +172,7 @@ a:hover::after {
 header {
     position: fixed;
     left: 0;
-    top: 10px;
+    top: 0;
     width: 100%;
     padding: 2rem 9%;
     display: flex;
