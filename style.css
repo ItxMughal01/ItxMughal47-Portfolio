@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: linear-gradient(#181818, rgb(63, 60, 60), #181818);
+    background: rgb(63, 60, 60);
     color: #fff;
 }
 
@@ -808,11 +808,8 @@ section.active {
 } */
 
 ::-webkit-scrollbar {
-    color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    color: transparent;
+    visibility: hidden;
+    width: .5px;
 }
 
 .resume-detail.skills .resume-list {
