@@ -10,7 +10,6 @@
 body {
     background: black;
     color: #fff;
-    height: 100vh;
 }
 
 .circle {
@@ -274,7 +273,7 @@ section.active {
     }
 
     100% {
-        transform: translateY(-100%);
+        transform: translateY(-110%);
     }
 }
 
@@ -285,7 +284,7 @@ section.active {
 
 @keyframes show-bars {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(-110%);
     }
 
     100% {
