@@ -85,28 +85,24 @@ html {
     background: rgb(0, 0, 0);
     color: #EAB62D;
     box-shadow: 0 0 15px #fff;
-    scale: 1.4;
 }
 
 .social2:hover {
     background: rgb(0, 0, 0);
     color: #EAB62D;
     box-shadow: 0 0 10px #fff;
-    scale: 1.4;
 }
 
 .social3:hover {
     background: rgb(0, 0, 0);
     color: #EAB62D;
     box-shadow: 0 0 10px #ffff;
-    scale: 1.4;
 }
 
 .social4:hover {
-    background: red;
-    color: #fff;
+    background: rgb(0, 0, 0);
+    color: #EAB62D;
     box-shadow: 0 0 10px #fff;
-    scale: 1.4;
 }
 
 a {
@@ -265,7 +261,8 @@ section.active {
 .bars-animation .bar {
     width: 100%;
     height: 100%;
-    background: linear-gradient(black, rgb(98, 98, 98), black);
+    /* background: linear-gradient(black, rgb(98, 98, 98), black); */
+    background: linear-gradient(90deg,#181818, rgb(63, 60, 60), #181818);
     animation: hide-bars .5s ease-in-out both;
     animation-delay: calc(.1s * var(--i));
 }
@@ -405,13 +402,14 @@ section.active {
     transition: .5s; */
     position: relative;
     overflow: hidden;
-    padding: .8rem 2.5rem;
+    padding-right: 30px;
+    padding-left: 25px;
+    padding-bottom: 23px;
     font-weight: 900;
     height: 3rem;
     border: 1px solid white;
     border-radius: 1.5rem;
     background: transparent;
-    color: ;
     transition: background 0.475s;
 }
 
@@ -440,7 +438,7 @@ section.active {
 }
 
 .home-info .btn-sci .sci {
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 /* .home-info .btn-sci .sci a {
@@ -588,7 +586,7 @@ section.active {
 
 .services-cont .services-box:hover {
     border-color: #EAB62D;
-    transform: scale(1.02);
+    transform: scale(1.08);
 }
 
 .services-box .icon {
@@ -645,6 +643,11 @@ section.active {
 
 .style {
     color: #fff;
+}
+
+.services .hyyy {
+    margin-top: 20px;
+    margin-left: -5%;
 }
 
 /* 
@@ -875,6 +878,10 @@ section.active {
     gap: 3rem;
 }
 
+.contact-box {
+    margin-top: 40px;
+}
+
 .contact-container .contact-box:first-child {
     align-self: center;
 }
@@ -956,7 +963,7 @@ section.active {
     border: .15rem solid #3e4248;
     border-radius: .6rem;
     font-size: 1.4rem;
-    color: #fff;
+    color: #EAB62D;
 }
 
 .contact-box .field-box textarea {
@@ -972,6 +979,7 @@ section.active {
 
 .contact-box .btn {
     margin-top: 1.7rem;
+    padding-top: 6px;
     cursor: pointer;
     background: #1f242d;
     color: #fff;
@@ -1009,6 +1017,10 @@ section.active {
 @media screen and (max-width: 992px) {
     header {
         padding: 2rem 40%;
+    }
+
+    .circle {
+        visibility: hidden;
     }
 
     section {
