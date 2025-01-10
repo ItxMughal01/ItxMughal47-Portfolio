@@ -10,7 +10,6 @@
 body {
     background: linear-gradient(90deg,#181818, rgb(63, 60, 60), #181818);
     color: #fff;
-    height: 50vh;
 }
 
 .circle {
@@ -274,7 +273,7 @@ section.active {
     }
 
     100% {
-        transform: translateY(-100%);
+        transform: translateY(-110%);
     }
 }
 
@@ -285,7 +284,7 @@ section.active {
 
 @keyframes show-bars {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(-110%);
     }
 
     100% {
