@@ -647,7 +647,7 @@ section.active {
     color: #fff;
 }
 
-/* 
+
 .services .servic {
     font-size: 72px;
 }
@@ -661,7 +661,7 @@ section.active {
 .servics:nth-child(2) {
     color: #EAB62D;
     animation: animate 1s ease-in infinite;
-} */
+}
 /* .arrow:hover {
     background-color: #EAB62D;
 } */
