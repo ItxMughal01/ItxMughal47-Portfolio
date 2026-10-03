@@ -1,1470 +1,1943 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Muhammad Haroon Mughal | MERN Stack Developer</title>
-  <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f7e3a1'/%3E%3Cstop offset='1' stop-color='%23b8862b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23050505'/%3E%3Crect x='2.5' y='2.5' width='59' height='59' rx='14' fill='none' stroke='url(%23g)' stroke-width='2.5'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='29' font-weight='700' text-anchor='middle' fill='url(%23g)'%3EHM%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=Outfit:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #050505;
-      --ink: #fff;
-      --mute: #b4b0a6;
-      --g1: #f7e3a1;
-      --g2: #d4a73c;
-      --g3: #8a6a1f;
-      --gold: linear-gradient(120deg,
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Muhammad Haroon Mughal | MERN Stack Developer (3D)</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f7e3a1'/%3E%3Cstop offset='1' stop-color='%23b8862b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23050505'/%3E%3Crect x='2.5' y='2.5' width='59' height='59' rx='14' fill='none' stroke='url(%23g)' stroke-width='2.5'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='29' font-weight='700' text-anchor='middle' fill='url(%23g)'%3EHM%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #050505;
+        --ink: #fff;
+        --mute: #b4b0a6;
+        --g1: #f7e3a1;
+        --g2: #d4a73c;
+        --g3: #8a6a1f;
+        --gold: linear-gradient(
+          120deg,
           var(--g1),
           var(--g2) 45%,
           var(--g3) 70%,
-          var(--g1));
-      --blur: 14px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font:
-        300 1.06rem/1.75 Outfit,
-        sans-serif;
-      overflow-x: hidden;
-      cursor: auto;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 700;
-      line-height: 1;
-      margin: 0;
-      letter-spacing: -0.01em;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    p {
-      color: var(--mute);
-      max-width: 58ch;
-    }
-
-    .gt {
-      background: var(--gold);
-      background-size: 220% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: sh 6s linear infinite;
-    }
-
-    @keyframes sh {
-      to {
-        background-position: -220% 0;
+          var(--g1)
+        );
+        --blur: 10px;
       }
-    }
 
-    .bg {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      overflow: hidden;
-      background: #050505;
-    }
+      * {
+        box-sizing: border-box;
+      }
 
-    .bg i {
-      position: absolute;
-      width: 55vmax;
-      height: 55vmax;
-      border-radius: 50%;
-      will-change: transform;
-      animation: fl 30s ease-in-out infinite alternate;
-    }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          300 1.06rem/1.75 Outfit,
+          sans-serif;
+        overflow-x: hidden;
+        cursor: auto;
+      }
 
-    .bg i:nth-child(1) {
-      left: -18vmax;
-      top: -18vmax;
-      background: radial-gradient(closest-side,
-          rgba(212, 167, 60, 0.5),
-          transparent);
-    }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
 
-    .bg i:nth-child(2) {
-      right: -22vmax;
-      top: 30vh;
-      background: radial-gradient(closest-side,
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      p {
+        color: var(--mute);
+        max-width: 58ch;
+      }
+
+      .gt {
+        background: var(--gold);
+        background-size: 220% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: sh 6s linear infinite;
+      }
+
+      @keyframes sh {
+        to {
+          background-position: -220% 0;
+        }
+      }
+
+      .bg {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+        background: #050505;
+      }
+
+      .bg i {
+        position: absolute;
+        width: 55vmax;
+        height: 55vmax;
+        border-radius: 50%;
+        will-change: transform;
+        animation: fl 30s ease-in-out infinite alternate;
+      }
+
+      .bg i:nth-child(1) {
+        left: -18vmax;
+        top: -18vmax;
+        background: radial-gradient(
+          closest-side,
+          rgba(236, 208, 140, 0.36),
+          transparent
+        );
+      }
+
+      .bg i:nth-child(2) {
+        right: -22vmax;
+        top: 30vh;
+        background: radial-gradient(
+          closest-side,
           rgba(255, 255, 255, 0.14),
-          transparent);
-      animation-duration: 36s;
-    }
-
-    .bg i:nth-child(3) {
-      left: 10vw;
-      bottom: -30vmax;
-      background: radial-gradient(closest-side,
-          rgba(247, 227, 161, 0.3),
-          transparent);
-      animation-duration: 42s;
-    }
-
-    @keyframes fl {
-      to {
-        transform: translate3d(10vw, 8vh, 0) scale(1.18);
+          transparent
+        );
+        animation-duration: 36s;
       }
-    }
 
-    .bg:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-      background-size: 72px 72px;
-      -webkit-mask: radial-gradient(70% 60% at 50% 40%, #000, transparent);
-      mask: radial-gradient(70% 60% at 50% 40%, #000, transparent);
-    }
+      .bg i:nth-child(3) {
+        left: 10vw;
+        bottom: -30vmax;
+        background: radial-gradient(
+          closest-side,
+          rgba(247, 232, 185, 0.22),
+          transparent
+        );
+        animation-duration: 42s;
+      }
 
-    .glass {
-      position: relative;
-      border-radius: 28px;
-      background: linear-gradient(135deg,
+      @keyframes fl {
+        to {
+          transform: translate3d(10vw, 8vh, 0) scale(1.18);
+        }
+      }
+
+      .bg:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 72px 72px;
+        -webkit-mask: radial-gradient(70% 60% at 50% 40%, #000, transparent);
+        mask: radial-gradient(70% 60% at 50% 40%, #000, transparent);
+      }
+
+      .glass {
+        position: relative;
+        border-radius: 28px;
+        background: linear-gradient(
+          135deg,
           rgba(255, 255, 255, 0.11),
           rgba(255, 255, 255, 0.015) 38%,
           rgba(255, 255, 255, 0.02) 62%,
-          rgba(247, 227, 161, 0.12));
-      -webkit-backdrop-filter: blur(var(--blur)) saturate(220%) brightness(1.12);
-      backdrop-filter: blur(var(--blur)) saturate(220%) brightness(1.12);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow:
-        inset 0 1.5px 1px rgba(255, 255, 255, 0.7),
-        inset 0 -1px 1px rgba(247, 227, 161, 0.35),
-        inset 0 0 28px rgba(255, 255, 255, 0.08),
-        0 30px 60px -26px #000;
-    }
+          rgba(247, 227, 161, 0.12)
+        );
+        -webkit-backdrop-filter: blur(var(--blur)) saturate(180%);
+        backdrop-filter: blur(var(--blur)) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow:
+          inset 0 1.5px 1px rgba(255, 255, 255, 0.7),
+          inset 0 -1px 1px rgba(247, 227, 161, 0.35),
+          inset 0 0 28px rgba(255, 255, 255, 0.08),
+          0 30px 60px -26px #000;
+      }
 
-    .glass:before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      background:
-        radial-gradient(130% 55% at 12% 0,
-          rgba(255, 255, 255, 0.26),
-          transparent 60%),
-        linear-gradient(120deg,
-          transparent 40%,
-          rgba(255, 255, 255, 0.07) 48%,
-          transparent 56%);
-    }
+      .glass:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            130% 55% at 12% 0,
+            rgba(255, 255, 255, 0.26),
+            transparent 60%
+          ),
+          linear-gradient(
+            120deg,
+            transparent 40%,
+            rgba(255, 255, 255, 0.07) 48%,
+            transparent 56%
+          );
+      }
 
-    .glass:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s;
-      background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 0),
+      .glass:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s;
+        background: radial-gradient(
+          340px circle at var(--mx, 50%) var(--my, 0),
           rgba(247, 227, 161, 0.2),
-          transparent 65%);
-    }
-
-    .glass:hover:after {
-      opacity: 1;
-    }
-
-    section {
-      padding: clamp(5rem, 11vw, 8.5rem) 0;
-      position: relative;
-    }
-
-    .h2 {
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      margin-bottom: 1.4rem;
-    }
-
-    ::-webkit-scrollbar {
-      width: 12px;
-      height: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #050505;
-      border-left: 1px solid rgba(247, 227, 161, 0.14);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #f7e3a1, #d4a73c 50%, #8a6a1f);
-      border-radius: 99px;
-      border: 3px solid #050505;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(180deg, #fff2c0, #e6b94a, #a67a1e);
-    }
-
-    @supports (-moz-appearance: none) {
-      html {
-        scrollbar-color: #d4a73c #050505;
-        scrollbar-width: thin;
+          transparent 65%
+        );
       }
-    }
 
-    ::selection {
-      background: #d4a73c;
-      color: #050505;
-    }
-
-    #top {
-      position: fixed;
-      z-index: 75;
-      right: 22px;
-      bottom: 22px;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      padding: 0;
-      cursor: pointer;
-      color: var(--g1);
-    }
-
-    #top svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      transform: rotate(-90deg);
-    }
-
-    #top .tr {
-      fill: none;
-      stroke: rgba(255, 255, 255, 0.15);
-      stroke-width: 2;
-    }
-
-    #top .p {
-      fill: none;
-      stroke: url(#tg);
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-dasharray: 151;
-      stroke-dashoffset: 151;
-    }
-
-    #top .ar {
-      position: relative;
-      width: 20px;
-      height: 20px;
-    }
-
-    /* preloader */
-    #pre {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      pointer-events: none;
-    }
-
-    .cur-t,
-    .cur-b {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 50.5%;
-      background: #050505;
-    }
-
-    .cur-t {
-      top: 0;
-    }
-
-    .cur-b {
-      bottom: 0;
-    }
-
-    #pre .mid {
-      position: relative;
-      z-index: 2;
-    }
-
-    #pre svg {
-      width: min(70vw, 300px);
-      overflow: visible;
-    }
-
-    #pre text {
-      font:
-        700 150px "Cormorant Garamond",
-        serif;
-      fill: rgba(212, 167, 60, 0);
-      stroke: #f7e3a1;
-      stroke-width: 1.6;
-      stroke-dasharray: 1100;
-      stroke-dashoffset: 1100;
-    }
-
-    #pre .nm {
-      font: 500 clamp(0.9rem, 3vw, 1.2rem)/1 Outfit;
-      letter-spacing: 0.5em;
-      color: #fff;
-      margin-top: 1rem;
-    }
-
-    #pre .ln {
-      width: min(60vw, 260px);
-      height: 2px;
-      margin: 1.6rem auto 0.8rem;
-      background: rgba(255, 255, 255, 0.15);
-      overflow: hidden;
-    }
-
-    #pre .ln b {
-      display: block;
-      height: 100%;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: 0 50%;
-    }
-
-    #cnt {
-      color: var(--g1);
-      font-size: 0.85rem;
-    }
-
-    /* cursor */
-    #dot,
-    #ring {
-      position: fixed;
-      left: 0;
-      top: 0;
-      z-index: 90;
-      pointer-events: none;
-      border-radius: 50%;
-    }
-
-    #dot {
-      width: 8px;
-      height: 8px;
-      margin: -4px;
-      background: var(--g1);
-      box-shadow: 0 0 14px var(--g2);
-    }
-
-    #ring {
-      width: 42px;
-      height: 42px;
-      margin: -21px;
-      border: 1.5px solid var(--g2);
-      display: grid;
-      place-items: center;
-      font: 600 0.62rem Outfit;
-      color: #111;
-      transition:
-        background 0.3s,
-        border-color 0.3s;
-    }
-
-    #ring.big {
-      background: rgba(247, 227, 161, 0.9);
-      border-color: transparent;
-    }
-
-    #ring span {
-      opacity: 0;
-    }
-
-    #ring.big span {
-      opacity: 1;
-    }
-
-    #bar {
-      position: fixed;
-      z-index: 80;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: 0 50%;
-    }
-
-    /* nav */
-    #nav {
-      position: fixed;
-      z-index: 70;
-      top: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(1100px, 94vw);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.55rem 0.6rem 0.55rem 1.3rem;
-      border-radius: 99px;
-    }
-
-    #nav .logo {
-      font: 700 1.7rem "Cormorant Garamond";
-    }
-
-    #nav ul {
-      display: flex;
-      gap: 0.2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    #nav li a {
-      display: block;
-      padding: 0.5rem 1rem;
-      border-radius: 99px;
-      font-size: 0.92rem;
-      color: var(--mute);
-      transition: 0.3s;
-    }
-
-    #nav li a.on {
-      background: rgba(247, 227, 161, 0.16);
-      color: #fff;
-    }
-
-    .btn-g {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.9rem 1.8rem;
-      border-radius: 99px;
-      font-weight: 500;
-      border: 1px solid rgba(247, 227, 161, 0.4);
-      background: rgba(255, 255, 255, 0.06);
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .btn-g.gold {
-      background: var(--gold);
-      color: #16120a;
-      border: 0;
-      font-weight: 600;
-    }
-
-    /* hero */
-    .hero {
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      padding-top: 7rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(3rem, 8.4vw, 7.6rem);
-      line-height: 1.12;
-      visibility: hidden;
-    }
-
-    .arch {
-      aspect-ratio: 3/4;
-      border-radius: 999px 999px 28px 28px;
-      padding: 12px;
-    }
-
-    .arch img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 999px 999px 18px 18px;
-    }
-
-    .spin {
-      position: absolute;
-      inset: -9% -9% auto auto;
-      width: 42%;
-      animation: rot 22s linear infinite;
-    }
-
-    .spin text {
-      font: 500 13.5px Outfit;
-      letter-spacing: 0.32em;
-      fill: #f7e3a1;
-    }
-
-    @keyframes rot {
-      to {
-        transform: rotate(360deg);
+      .glass:hover:after {
+        opacity: 1;
       }
-    }
 
-    /* marquee */
-    .mq {
-      margin-top: 6rem;
-      overflow: hidden;
-      padding: 1.1rem 0;
-      border-block: 1px solid rgba(247, 227, 161, 0.2);
-      background: rgba(255, 255, 255, 0.03);
-    }
+      section {
+        padding: clamp(5rem, 11vw, 8.5rem) 0;
+        position: relative;
+      }
 
-    .mq div {
-      display: flex;
-      gap: 2.5rem;
-      width: max-content;
-      animation: mq 30s linear infinite;
-      font: 700 clamp(1.8rem, 4vw, 3rem) "Cormorant Garamond";
-      font-style: italic;
-    }
+      .h2 {
+        font-size: clamp(2.6rem, 6vw, 5rem);
+        margin-bottom: 1.4rem;
+      }
 
-    .mq span:nth-child(odd) {
-      color: #fff;
-    }
+      ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
 
-    .mq span:nth-child(even) {
-      color: var(--g2);
-    }
+      ::-webkit-scrollbar-track {
+        background: #050505;
+        border-left: 1px solid rgba(247, 227, 161, 0.14);
+      }
 
-    @keyframes mq {
-      to {
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #f7e3a1, #d4a73c 50%, #8a6a1f);
+        border-radius: 99px;
+        border: 3px solid #050505;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #fff2c0, #e6b94a, #a67a1e);
+      }
+
+      @supports (-moz-appearance: none) {
+        html {
+          scrollbar-color: #d4a73c #050505;
+          scrollbar-width: thin;
+        }
+      }
+
+      ::selection {
+        background: #d4a73c;
+        color: #050505;
+      }
+
+      #top {
+        position: fixed;
+        z-index: 75;
+        right: 22px;
+        bottom: 22px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        padding: 0;
+        cursor: pointer;
+        color: var(--g1);
+      }
+
+      #top svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+      }
+
+      #top .tr {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.15);
+        stroke-width: 2;
+      }
+
+      #top .p {
+        fill: none;
+        stroke: url(#tg);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-dasharray: 151;
+        stroke-dashoffset: 151;
+      }
+
+      #top .ar {
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+
+      #gl {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      html.l1 .glass {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+      }
+
+      html.l2 .glass:not(#nav) {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background: linear-gradient(
+          135deg,
+          rgba(24, 24, 30, 0.6),
+          rgba(255, 255, 255, 0.07)
+        );
+      }
+
+      html.l2 .bg i {
+        animation: none;
+      }
+
+      /* preloader */
+      #pre {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        pointer-events: none;
+      }
+
+      .cur-t,
+      .cur-b {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 50.5%;
+        background: #050505;
+      }
+
+      .cur-t {
+        top: 0;
+      }
+
+      .cur-b {
+        bottom: 0;
+      }
+
+      #pre .mid {
+        position: relative;
+        z-index: 2;
+      }
+
+      #pre svg {
+        width: min(70vw, 300px);
+        overflow: visible;
+      }
+
+      #pre text {
+        font:
+          700 150px "Cormorant Garamond",
+          serif;
+        fill: rgba(212, 167, 60, 0);
+        stroke: #f7e3a1;
+        stroke-width: 1.6;
+        stroke-dasharray: 1100;
+        stroke-dashoffset: 1100;
+      }
+
+      #pre .nm {
+        font: 500 clamp(0.9rem, 3vw, 1.2rem)/1 Outfit;
+        letter-spacing: 0.5em;
+        color: #fff;
+        margin-top: 1rem;
+      }
+
+      #pre .ln {
+        width: min(60vw, 260px);
+        height: 2px;
+        margin: 1.6rem auto 0.8rem;
+        background: rgba(255, 255, 255, 0.15);
+        overflow: hidden;
+      }
+
+      #pre .ln b {
+        display: block;
+        height: 100%;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+      }
+
+      #cnt {
+        color: var(--g1);
+        font-size: 0.85rem;
+      }
+
+      /* cursor */
+      #dot,
+      #ring {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 90;
+        pointer-events: none;
+        border-radius: 50%;
+        will-change: transform;
+      }
+
+      #dot {
+        width: 8px;
+        height: 8px;
+        margin: -4px;
+        background: var(--g1);
+        box-shadow: 0 0 14px var(--g2);
+      }
+
+      #ring {
+        width: 42px;
+        height: 42px;
+        margin: -21px;
+        border: 1.5px solid var(--g2);
+        display: grid;
+        place-items: center;
+        font: 600 0.62rem Outfit;
+        color: #111;
+        transition:
+          background 0.3s,
+          border-color 0.3s,
+          scale 0.3s;
+      }
+
+      #ring.big {
+        background: rgba(247, 227, 161, 0.9);
+        border-color: transparent;
+      }
+
+      #ring span {
+        opacity: 0;
+      }
+
+      #ring.big span {
+        opacity: 1;
+      }
+
+      #bar {
+        position: fixed;
+        z-index: 80;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+      }
+
+      /* nav */
+      #nav {
+        position: fixed;
+        z-index: 70;
+        top: 14px;
+        left: 50%;
         transform: translateX(-50%);
+        width: min(1100px, 94vw);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.55rem 0.6rem 0.55rem 1.3rem;
+        border-radius: 99px;
       }
-    }
 
-    .stat {
-      padding: 1.6rem;
-      text-align: center;
-      background: linear-gradient(140deg,
-          rgba(255, 255, 255, 0.3),
-          rgba(255, 255, 255, 0.08));
-      color: #fff;
-    }
-
-    .stat b {
-      font: 700 3.4rem "Cormorant Garamond";
-      display: block;
-    }
-
-    .tile {
-      padding: 2rem;
-      height: 100%;
-      transform-style: preserve-3d;
-    }
-
-    .tile h3 {
-      font-size: 1.9rem;
-      margin: 0.4rem 0 0.6rem;
-    }
-
-    .tile .big {
-      font: 700 5.5rem/1 "Cormorant Garamond";
-      font-style: italic;
-    }
-
-    .accordion-item {
-      background: none;
-      border: 0;
-      margin-bottom: 1rem;
-      border-radius: 22px !important;
-      color: #fff;
-    }
-
-    .accordion-button {
-      background: none !important;
-      color: #fff !important;
-      font: 700 1.7rem "Cormorant Garamond";
-      box-shadow: none !important;
-      padding: 1.4rem 1.6rem;
-      border-radius: 22px !important;
-    }
-
-    .accordion-button:after {
-      filter: invert(1) sepia(1) saturate(4) hue-rotate(5deg);
-    }
-
-    .flt {
-      margin: 0.2rem;
-      padding: 0.55rem 1.3rem;
-      border-radius: 99px;
-      border: 1px solid rgba(247, 227, 161, 0.3);
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--mute);
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .flt.on {
-      background: var(--gold);
-      color: #16120a;
-      border-color: transparent;
-      font-weight: 600;
-    }
-
-    .p-item {
-      padding: 10px;
-    }
-
-    .p-item a {
-      display: block;
-      padding: 8px;
-      aspect-ratio: 4/3;
-      overflow: hidden;
-    }
-
-    .p-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
-      filter: grayscale(0.5) contrast(1.05);
-      transition:
-        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
-        filter 0.5s;
-    }
-
-    .p-item a:hover img {
-      transform: scale(1.07);
-      filter: none;
-    }
-
-    .cap {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 0.7rem 1.1rem;
-      border-radius: 16px;
-      display: flex;
-      justify-content: space-between;
-      font-weight: 500;
-      background: rgba(5, 5, 5, 0.5);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(247, 227, 161, 0.25);
-    }
-
-    .swiper {
-      padding: 1rem 0.5rem 3.5rem;
-    }
-
-    .swiper-slide {
-      height: auto;
-    }
-
-    .tm {
-      padding: 2rem;
-      height: 100%;
-    }
-
-    .tm .big {
-      font: 700 4.2rem/1 "Cormorant Garamond";
-      font-style: italic;
-    }
-
-    .tm img {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--g2);
-    }
-
-    .swiper-pagination-bullet {
-      background: #fff;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: var(--g2);
-    }
-
-    .fld {
-      width: 100%;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1rem;
-      border-radius: 16px;
-      border: 1px solid rgba(247, 227, 161, 0.25);
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      font: inherit;
-    }
-
-    .fld::placeholder {
-      color: #8c8878;
-    }
-
-    .fld:focus,
-    .btn-g:focus-visible,
-    .flt:focus-visible,
-    #nav a:focus-visible {
-      outline: 2px solid var(--g1);
-      outline-offset: 2px;
-    }
-
-    #toast {
-      position: fixed;
-      z-index: 85;
-      left: 50%;
-      bottom: 30px;
-      transform: translate(-50%, 130px);
-      padding: 1rem 1.6rem;
-    }
-
-    .lg-backdrop {
-      background: rgba(5, 5, 5, 0.94);
-    }
-
-    @media (max-width: 768px) {
-      :root {
-        --blur: 12px;
+      #nav .logo {
+        font: 700 1.7rem "Cormorant Garamond";
       }
 
       #nav ul {
-        display: none;
+        display: flex;
+        gap: 0.2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
       }
 
-      #dot,
-      #ring {
-        display: none;
+      #nav li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        border-radius: 99px;
+        font-size: 0.92rem;
+        color: var(--mute);
+        transition: 0.3s;
+      }
+
+      #nav li a.on {
+        background: rgba(247, 227, 161, 0.16);
+        color: #fff;
+      }
+
+      .btn-g {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.9rem 1.8rem;
+        border-radius: 99px;
+        font-weight: 500;
+        border: 1px solid rgba(247, 227, 161, 0.4);
+        background: rgba(255, 255, 255, 0.06);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .btn-g.gold {
+        background: var(--gold);
+        color: #16120a;
+        border: 0;
+        font-weight: 600;
+      }
+
+      /* hero */
+      .hero {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        padding-top: 7rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 8.4vw, 7.6rem);
+        line-height: 1.12;
+        visibility: hidden;
+      }
+
+      .glass.arch {
+        -webkit-backdrop-filter: blur(2.5px) saturate(160%);
+        backdrop-filter: blur(2.5px) saturate(160%);
       }
 
       .arch {
-        margin-top: 3rem;
+        aspect-ratio: 1;
+        width: min(100%, 460px);
+        margin-inline: auto;
+        border-radius: 50%;
+        padding: 12px;
+        animation: bob 6s ease-in-out infinite alternate;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.015) 56%,
+          rgba(247, 227, 161, 0.07) 78%,
+          rgba(255, 255, 255, 0.12) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+          inset 0 0 70px rgba(255, 255, 255, 0.05),
+          inset 0 -34px 60px -22px rgba(247, 227, 161, 0.2),
+          inset 0 28px 50px -26px rgba(255, 255, 255, 0.28),
+          0 40px 80px -30px #000;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-
-      .bg i,
-      .mq div,
-      .spin,
-      .gt {
-        animation: none;
+      .arch:before {
+        background:
+          radial-gradient(
+            ellipse 38% 20% at 30% 15%,
+            rgba(255, 255, 255, 0.4),
+            transparent 72%
+          ),
+          radial-gradient(
+            ellipse 30% 13% at 72% 89%,
+            rgba(247, 227, 161, 0.32),
+            transparent 72%
+          ),
+          radial-gradient(
+            circle,
+            transparent 66%,
+            rgba(255, 255, 255, 0.08) 86%,
+            rgba(255, 255, 255, 0.26) 99%,
+            transparent 100%
+          );
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div id="pre">
-    <div class="cur-t"></div>
-    <div class="cur-b"></div>
-    <div class="mid">
-      <svg viewBox="0 0 300 150">
-        <text x="150" y="125" text-anchor="middle">HM</text>
-      </svg>
-      <div class="nm" id="pnm">MUHAMMAD HAROON MUGHAL</div>
-      <div class="ln"><b id="pb"></b></div>
-      <div id="cnt">0%</div>
-    </div>
-  </div>
-  <div id="bar"></div>
-  <div id="dot"></div>
-  <div id="ring"><span>View</span></div>
-  <div class="bg"><i></i><i></i><i></i></div>
+      @keyframes bob {
+        to {
+          translate: 0 -16px;
+        }
+      }
 
-  <nav id="nav" class="glass" aria-label="Main">
-    <a href="#home" data-go class="logo gt">HM</a>
-    <ul>
-      <li><a href="#home" data-go class="on">Home</a></li>
-      <li><a href="#about" data-go>About</a></li>
-      <li><a href="#stack" data-go>Stack</a></li>
-      <li><a href="#services" data-go>Services</a></li>
-      <li><a href="#work" data-go>Toolkit</a></li>
-    </ul>
-    <a href="#contact" data-go class="btn-g gold mag">Hire me</a>
-  </nav>
+      .arch img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
 
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-      <header id="home" class="hero">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-7">
-              <p class="mb-3">MERN Stack Developer</p>
-              <h1 id="ht">Muhammad Haroon Mughal</h1>
-              <p class="mt-4 fs-5">
-                I build fast, secure full-stack web apps with MongoDB,
-                Express, React and Node.js, from database to pixel-perfect
-                interface.
-              </p>
-              <div class="d-flex flex-wrap gap-3 mt-5">
-                <a href="#work" data-go class="btn-g gold mag">Explore my toolkit</a><a href="#contact" data-go
-                  class="btn-g mag">Let's talk</a>
-              </div>
-            </div>
-            <div class="col-lg-5 position-relative">
-              <div class="glass arch" data-speed="0.92">
-                <img id="hi" alt="Muhammad Haroon Mughal" />
-              </div>
-              <svg class="spin" viewBox="0 0 200 200" aria-hidden="true">
-                <defs>
-                  <path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
-                </defs>
-                <text>
-                  <textPath href="#c">
-                    MERN STACK DEVELOPER • MONGODB • EXPRESS • REACT • NODE •
-                  </textPath>
-                </text>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </header>
+      .spin {
+        position: absolute;
+        inset: -9% -9% auto auto;
+        width: 42%;
+        animation: rot 22s linear infinite;
+      }
 
-      <div class="mq" aria-hidden="true">
-        <div id="mq"></div>
+      .spin text {
+        font: 500 13.5px Outfit;
+        letter-spacing: 0.32em;
+        fill: #f7e3a1;
+      }
+
+      @keyframes rot {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* marquee */
+      .mq {
+        margin-top: 6rem;
+        overflow: hidden;
+        padding: 1.1rem 0;
+        border-block: 1px solid rgba(247, 227, 161, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .mq div {
+        display: flex;
+        gap: 2.5rem;
+        width: max-content;
+        animation: mq 30s linear infinite;
+        font: 700 clamp(1.8rem, 4vw, 3rem) "Cormorant Garamond";
+        font-style: italic;
+      }
+
+      .mq span:nth-child(odd) {
+        color: #fff;
+      }
+
+      .mq span:nth-child(even) {
+        color: var(--g2);
+      }
+
+      @keyframes mq {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .stat {
+        padding: 1.6rem;
+        text-align: center;
+        background: linear-gradient(
+          140deg,
+          rgba(255, 255, 255, 0.3),
+          rgba(255, 255, 255, 0.08)
+        );
+        color: #fff;
+      }
+
+      .stat b {
+        font: 700 3.4rem "Cormorant Garamond";
+        display: block;
+      }
+
+      .tile {
+        padding: 2rem;
+        height: 100%;
+        transform-style: preserve-3d;
+      }
+
+      .tile h3 {
+        font-size: 1.9rem;
+        margin: 0.4rem 0 0.6rem;
+      }
+
+      .tile .big {
+        font: 700 5.5rem/1 "Cormorant Garamond";
+        font-style: italic;
+      }
+
+      .accordion-item {
+        background: none;
+        border: 0;
+        margin-bottom: 1rem;
+        border-radius: 22px !important;
+        color: #fff;
+      }
+
+      .accordion-button {
+        background: none !important;
+        color: #fff !important;
+        font: 700 1.7rem "Cormorant Garamond";
+        box-shadow: none !important;
+        padding: 1.4rem 1.6rem;
+        border-radius: 22px !important;
+      }
+
+      .accordion-button:after {
+        filter: invert(1) sepia(1) saturate(4) hue-rotate(5deg);
+      }
+
+      .flt {
+        margin: 0.2rem;
+        padding: 0.55rem 1.3rem;
+        border-radius: 99px;
+        border: 1px solid rgba(247, 227, 161, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--mute);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .flt.on {
+        background: var(--gold);
+        color: #16120a;
+        border-color: transparent;
+        font-weight: 600;
+      }
+
+      .p-item {
+        padding: 10px;
+      }
+
+      .p-item a {
+        display: block;
+        padding: 8px;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+      }
+
+      .p-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        filter: grayscale(0.5) contrast(1.05);
+        transition:
+          transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+          filter 0.5s;
+      }
+
+      .p-item a:hover img {
+        transform: scale(1.07);
+        filter: none;
+      }
+
+      .cap {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        padding: 0.7rem 1.1rem;
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        background: rgba(5, 5, 5, 0.5);
+        -webkit-backdrop-filter: blur(14px);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(247, 227, 161, 0.25);
+      }
+
+      .swiper {
+        padding: 1rem 0.5rem 3.5rem;
+      }
+
+      .swiper-slide {
+        height: auto;
+      }
+
+      .tm {
+        padding: 2rem;
+        height: 100%;
+      }
+
+      .tm .big {
+        font: 700 4.2rem/1 "Cormorant Garamond";
+        font-style: italic;
+      }
+
+      .tm img {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--g2);
+      }
+
+      .swiper-pagination-bullet {
+        background: #fff;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: var(--g2);
+      }
+
+      .fld {
+        width: 100%;
+        padding: 1rem 1.2rem;
+        margin-bottom: 1rem;
+        border-radius: 16px;
+        border: 1px solid rgba(247, 227, 161, 0.25);
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        font: inherit;
+      }
+
+      .fld::placeholder {
+        color: #8c8878;
+      }
+
+      .fld:focus,
+      .btn-g:focus-visible,
+      .flt:focus-visible,
+      #nav a:focus-visible {
+        outline: 2px solid var(--g1);
+        outline-offset: 2px;
+      }
+
+      #toast {
+        position: fixed;
+        z-index: 85;
+        left: 50%;
+        bottom: 30px;
+        transform: translate(-50%, 130px);
+        padding: 1rem 1.6rem;
+      }
+
+      .lg-backdrop {
+        background: rgba(5, 5, 5, 0.94);
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --blur: 8px;
+        }
+
+        #nav ul {
+          display: none;
+        }
+
+        #dot,
+        #ring {
+          display: none;
+        }
+
+        .arch {
+          margin-top: 3rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bg i,
+        .mq div,
+        .spin,
+        .gt,
+        .arch {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="pre">
+      <div class="cur-t"></div>
+      <div class="cur-b"></div>
+      <div class="mid">
+        <svg viewBox="0 0 300 150">
+          <text x="150" y="125" text-anchor="middle">HM</text>
+        </svg>
+        <div class="nm" id="pnm">MUHAMMAD HAROON MUGHAL</div>
+        <div class="ln"><b id="pb"></b></div>
+        <div id="cnt">0%</div>
       </div>
-
-      <section id="about">
-        <div class="container">
-          <div class="row g-5 align-items-center">
-            <div class="col-lg-6">
-              <h2 class="h2 split">
-                Code that ships. Interfaces that impress.
-              </h2>
-              <p class="rv">
-                I'm a MERN stack developer who cares about clean architecture,
-                secure APIs and smooth user experiences. I turn product ideas
-                into scalable web apps that are quick to load and easy to
-                maintain.
-              </p>
-            </div>
-            <div class="col-lg-6">
-              <div class="row g-3">
-                <div class="col-6">
-                  <div class="glass stat rv">
-                    <b data-n="30">0</b>Projects built
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="glass stat rv">
-                    <b data-n="20">0</b>Happy clients
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="glass stat rv">
-                    <b data-n="4">0</b>Years coding
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="glass stat rv">
-                    <b data-n="99">0</b>Performance score
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="stack">
-        <div class="container">
-          <h2 class="h2 split">My stack, end to end</h2>
-          <div class="row g-4 mt-2" id="tiles"></div>
-        </div>
-      </section>
-
-      <section id="services">
-        <div class="container">
-          <div class="row g-5">
-            <div class="col-lg-5">
-              <h2 class="h2 split">How I can help you</h2>
-              <p class="rv">
-                From a single feature to a complete product, I handle the
-                whole build.
-              </p>
-            </div>
-            <div class="col-lg-7">
-              <div class="accordion" id="acc"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="work">
-        <div class="container">
-          <h2 class="h2 split">My toolkit</h2>
-          <div class="mb-4 rv">
-            <button class="flt on" data-f="*">All</button><button class="flt" data-f=".front">Frontend</button><button
-              class="flt" data-f=".back">Backend</button><button class="flt" data-f=".data">Database</button><button
-              class="flt" data-f=".tools">Tools</button>
-          </div>
-          <div class="row" id="grid"></div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <h2 class="h2 split">My journey so far</h2>
-          <div class="swiper mt-4" data-cur="Drag">
-            <div class="swiper-wrapper" id="tms"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="glass p-4 p-md-5 tilt">
-                <h2 class="h2 split">Have a project in mind?</h2>
-                <form id="f" class="mt-4">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <input class="fld" placeholder="Your name" required aria-label="Name" />
-                    </div>
-                    <div class="col-md-6">
-                      <input class="fld" type="email" placeholder="Your email" required aria-label="Email" />
-                    </div>
-                  </div>
-                  <textarea class="fld" rows="4" placeholder="Tell me about your idea" required
-                    aria-label="Message"></textarea>
-                  <button class="btn-g gold mag" type="submit">
-                    Send message
-                  </button>
-                </form>
-              </div>
-              <p class="text-center mt-5 mx-auto">
-                © 2026 Muhammad Haroon Mughal. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
-  </div>
-  <div id="toast" class="glass">Message sent. I'll reply within a day.</div>
-  <button id="top" class="glass" aria-label="Back to top">
-    <svg viewBox="0 0 56 56" aria-hidden="true">
-      <defs>
-        <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#f7e3a1" />
-          <stop offset="1" stop-color="#d4a73c" />
-        </linearGradient>
-      </defs>
-      <circle class="tr" cx="28" cy="28" r="24" />
-      <circle class="p" cx="28" cy="28" r="24" />
-    </svg><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-      stroke-linecap="round" stroke-linejoin="round" style="transform: none">
-      <path d="M12 19V5M5 12l7-7 7 7" />
-    </svg>
-  </button>
+    <div id="bar"></div>
+    <div id="dot"></div>
+    <div id="ring"><span>View</span></div>
+    <div class="bg"><i></i><i></i><i></i></div>
+    <canvas id="gl" aria-hidden="true"></canvas>
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.umd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    gsap.registerPlugin(
-      ScrollTrigger,
-      ScrollToPlugin,
-      ScrollSmoother,
-      SplitText,
-    );
-    const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches,
-      fine = matchMedia("(pointer:fine)").matches;
+    <nav id="nav" class="glass" aria-label="Main">
+      <a href="#home" data-go class="logo gt">MHM</a>
+      <ul>
+        <li><a href="#home" data-go class="on">Home</a></li>
+        <li><a href="#about" data-go>About</a></li>
+        <li><a href="#stack" data-go>Stack</a></li>
+        <li><a href="#services" data-go>Services</a></li>
+        <li><a href="#work" data-go>Toolkit</a></li>
+      </ul>
+      <a href="#contact" data-go class="btn-g gold mag">Hire me</a>
+    </nav>
 
-    /* ---- content (edit here) ---- */
-    const skills = [
-      "MongoDB",
-      "Express.js",
-      "React",
-      "Node.js",
-      "REST APIs",
-      "JWT Auth",
-      "Redux",
-      "Tailwind",
-    ];
-    $("#mq").html(
-      [...skills, ...skills, ...skills]
-        .map((s) => `<span>${s}</span>`)
-        .join(""),
-    );
-    $("#tiles").html(
-      [
-        [
-          "M",
-          "MongoDB",
-          "Flexible schemas, indexing and aggregation pipelines.",
-        ],
-        ["E", "Express.js", "Clean, secure REST APIs with solid middleware."],
-        ["R", "React", "Fast, reusable UIs with hooks and state management."],
-        [
-          "N",
-          "Node.js",
-          "Scalable servers, real-time sockets and background jobs.",
-        ],
-      ]
-        .map(
-          (t) =>
-            `<div class="col-md-6 col-lg-3"><div class="glass tile tilt rv"><div class="big gt">${t[0]}</div><h3>${t[1]}</h3><p>${t[2]}</p></div></div>`,
-        )
-        .join(""),
-    );
-    $("#acc").html(
-      [
-        [
-          "Full-stack web apps",
-          "Complete MERN products: database design, API, admin panel and a polished front end.",
-        ],
-        [
-          "REST APIs and authentication",
-          "Secure endpoints with JWT, role-based access, validation and clear documentation.",
-        ],
-        [
-          "Real-time features",
-          "Live chat, notifications and dashboards using Socket.io.",
-        ],
-        [
-          "Deployment and performance",
-          "Cloud hosting, CI/CD, caching and speed tuning so your app stays fast.",
-        ],
-      ]
-        .map(
-          (s, i) =>
-            `<div class="accordion-item glass rv"><h3><button class="accordion-button ${i ? "collapsed" : ""}" data-bs-toggle="collapse" data-bs-target="#a${i}">${s[0]}</button></h3><div id="a${i}" class="accordion-collapse collapse ${i ? "" : "show"}" data-bs-parent="#acc"><div class="accordion-body pt-0"><p>${s[1]}</p></div></div></div>`,
-        )
-        .join(""),
-    );
-    const art = (t, i, w, h, sub) => {
-      const x = [0.2, 0.7, 0.4, 0.8, 0.3, 0.6][i % 6] * w,
-        y = [0.3, 0.6, 0.7, 0.25, 0.55, 0.4][i % 6] * h,
-        fs = Math.min(h * 0.15, (w * 0.7) / Math.max(t.length * 0.55, 2)),
-        s = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${w} ${h}'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f7e3a1'/><stop offset='1' stop-color='#a67a1e'/></linearGradient><radialGradient id='r'><stop offset='0' stop-color='#f7e3a1' stop-opacity='.9'/><stop offset='1' stop-color='#d4a73c' stop-opacity='0'/></radialGradient><linearGradient id='p' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#fff' stop-opacity='.32'/><stop offset='1' stop-color='#fff' stop-opacity='.03'/></linearGradient></defs><rect width='${w}' height='${h}' fill='#070707'/><circle cx='${x}' cy='${y}' r='${h * 0.5}' fill='url(#r)' opacity='.75'/><circle cx='${w - x}' cy='${h - y}' r='${h * 0.28}' fill='url(#r)' opacity='.4'/><g stroke='#fff' stroke-opacity='.06'>${[...Array(12)].map((_, k) => `<path d='M${(k * w) / 11} 0V${h}M0 ${(k * h) / 11}H${w}'/>`).join("")}</g><rect x='${w * 0.12}' y='${h * 0.2}' width='${w * 0.76}' height='${h * 0.6}' rx='${h * 0.05}' fill='url(#p)' stroke='#fff' stroke-opacity='.45'/><text x='${w / 2}' y='${h * 0.52}' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='${fs}' fill='url(#g)'>${t}</text><text x='${w / 2}' y='${h * 0.62}' text-anchor='middle' font-family='Arial,sans-serif' font-size='${h * 0.03}' letter-spacing='${h * 0.01}' fill='#fff' fill-opacity='.8'>${sub || ""}</text><g fill='#f7e3a1' fill-opacity='.55'><rect x='${w * 0.2}' y='${h * 0.7}' width='${w * 0.3}' height='${h * 0.012}' rx='4'/><rect x='${w * 0.2}' y='${h * 0.73}' width='${w * 0.45}' height='${h * 0.012}' rx='4' fill-opacity='.3'/></g></svg>`;
-      return "data:image/svg+xml," + encodeURIComponent(s);
-    };
-    $("#hi").attr("src", art("HM", 0, 700, 940, "MERN STACK DEVELOPER"));
-    const sk = [
-      ["React", "front"],
-      ["Tailwind CSS", "front"],
-      ["Node.js", "back"],
-      ["Express.js", "back"],
-      ["Socket.io", "back"],
-      ["MongoDB", "data"],
-      ["Mongoose", "data"],
-      ["GitHub", "tools"],
-      ["Postman", "tools"],
-    ],
-      cl = {
-        front: "Frontend",
-        back: "Backend",
-        data: "Database",
-        tools: "Tools",
-      };
-    $("#grid").html(
-      sk
-        .map(
-          (w, i) =>
-            `<div class="col-md-6 col-lg-4 p-item ${w[1]}"><a class="glass" data-cur="View" href="${art(w[0], i, 1600, 1100, cl[w[1]].toUpperCase())}" data-sub-html="<h4>${w[0]}</h4><p>Part of my MERN toolkit</p>"><img alt="${w[0]}" src="${art(w[0], i, 800, 600, cl[w[1]].toUpperCase())}"><div class="cap"><span>${w[0]}</span><span class="text-warning">${cl[w[1]]}</span></div></a></div>`,
-        )
-        .join(""),
-    );
-    $("#tms").html(
-      [
-        ["01", "Learning the web", "HTML, CSS and JavaScript fundamentals."],
-        [
-          "02",
-          "Building with React",
-          "Components, hooks and state management.",
-        ],
-        [
-          "03",
-          "Backend with Node",
-          "APIs, authentication and middleware with Express.",
-        ],
-        [
-          "04",
-          "Data with MongoDB",
-          "Schema design, Mongoose and aggregation.",
-        ],
-        [
-          "05",
-          "Full-stack products",
-          "Joining everything into real, deployed apps.",
-        ],
-        ["06", "What is next", "Scaling, performance and real-time systems."],
-      ]
-        .map(
-          (t) =>
-            `<div class="swiper-slide"><div class="glass tm"><div class="big gt">${t[0]}</div><h3 class="mt-3">${t[1]}</h3><p class="mt-2">${t[2]}</p></div></div>`,
-        )
-        .join(""),
-    );
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <header id="home" class="hero">
+          <div class="container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-7">
+                <p class="mb-3">MERN Stack Developer</p>
+                <h1 id="ht">Muhammad Haroon Mughal</h1>
+                <p class="mt-4 fs-5">
+                  I build fast, secure full-stack web apps with MongoDB,
+                  Express, React and Node.js, from database to pixel-perfect
+                  interface.
+                </p>
+                <div class="d-flex flex-wrap gap-3 mt-5">
+                  <a href="#work" data-go class="btn-g gold mag"
+                    >Explore my toolkit</a
+                  ><a href="#contact" data-go class="btn-g mag">Let's talk</a>
+                </div>
+              </div>
+              <div class="col-lg-5 position-relative">
+                <div class="glass arch" data-speed="0.92">
+                  <img id="hi" alt="Muhammad Haroon Mughal" />
+                </div>
+                <svg class="spin" viewBox="0 0 200 200" aria-hidden="true">
+                  <defs>
+                    <path
+                      id="c"
+                      d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
+                    />
+                  </defs>
+                  <text>
+                    <textPath href="#c">
+                      MERN STACK DEVELOPER • MONGODB • EXPRESS • REACT • NODE •
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </header>
 
-    /* ---- libraries ---- */
-    new Swiper(".swiper", {
-      loop: true,
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 1.1,
-      spaceBetween: 20,
-      speed: 700,
-      autoplay: { delay: 4200, disableOnInteraction: false },
-      pagination: { el: ".swiper-pagination", clickable: true },
-      breakpoints: {
-        768: { slidesPerView: 2 },
-        1200: { slidesPerView: 2.4 },
-      },
-    });
-    let lg, $g;
-    function initLG() {
-      lg && lg.destroy();
-      $("#grid a").removeClass("lg-on");
-      $g.isotope("getFilteredItemElements").forEach((e) =>
-        e.querySelector("a").classList.add("lg-on"),
+        <div class="mq" aria-hidden="true">
+          <div id="mq"></div>
+        </div>
+
+        <section id="about">
+          <div class="container">
+            <div class="row g-5 align-items-center">
+              <div class="col-lg-6">
+                <h2 class="h2 split">
+                  Code that ships. Interfaces that impress.
+                </h2>
+                <p class="rv">
+                  I'm a MERN stack developer who cares about clean architecture,
+                  secure APIs and smooth user experiences. I turn product ideas
+                  into scalable web apps that are quick to load and easy to
+                  maintain.
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <div class="row g-3">
+                  <div class="col-6">
+                    <div class="glass stat rv">
+                      <b data-n="30">0</b>Projects built
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="glass stat rv">
+                      <b data-n="20">0</b>Happy clients
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="glass stat rv">
+                      <b data-n="4">0</b>Years coding
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="glass stat rv">
+                      <b data-n="99">0</b>Performance score
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="stack">
+          <div class="container">
+            <h2 class="h2 split">My stack, end to end</h2>
+            <div class="row g-4 mt-2" id="tiles"></div>
+          </div>
+        </section>
+
+        <section id="services">
+          <div class="container">
+            <div class="row g-5">
+              <div class="col-lg-5">
+                <h2 class="h2 split">How I can help you</h2>
+                <p class="rv">
+                  From a single feature to a complete product, I handle the
+                  whole build.
+                </p>
+              </div>
+              <div class="col-lg-7">
+                <div class="accordion" id="acc"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="work">
+          <div class="container">
+            <h2 class="h2 split">My toolkit</h2>
+            <div class="mb-4 rv">
+              <button class="flt on" data-f="*">All</button
+              ><button class="flt" data-f=".front">Frontend</button
+              ><button class="flt" data-f=".back">Backend</button
+              ><button class="flt" data-f=".data">Database</button
+              ><button class="flt" data-f=".tools">Tools</button>
+            </div>
+            <div class="row" id="grid"></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="container">
+            <h2 class="h2 split">My journey so far</h2>
+            <div class="swiper mt-4" data-cur="Drag">
+              <div class="swiper-wrapper" id="tms"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="glass p-4 p-md-5 tilt">
+                  <h2 class="h2 split">Have a project in mind?</h2>
+                  <form id="f" class="mt-4">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input
+                          class="fld"
+                          placeholder="Your name"
+                          required
+                          aria-label="Name"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <input
+                          class="fld"
+                          type="email"
+                          placeholder="Your email"
+                          required
+                          aria-label="Email"
+                        />
+                      </div>
+                    </div>
+                    <textarea
+                      class="fld"
+                      rows="4"
+                      placeholder="Tell me about your idea"
+                      required
+                      aria-label="Message"
+                    ></textarea>
+                    <button class="btn-g gold mag" type="submit">
+                      Send message
+                    </button>
+                  </form>
+                </div>
+                <p class="text-center mt-5 mx-auto">
+                  © 2026 Muhammad Haroon Mughal. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div id="toast" class="glass">Message sent. I'll reply within a day.</div>
+    <button id="top" class="glass" aria-label="Back to top">
+      <svg viewBox="0 0 56 56" aria-hidden="true">
+        <defs>
+          <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f7e3a1" />
+            <stop offset="1" stop-color="#d4a73c" />
+          </linearGradient>
+        </defs>
+        <circle class="tr" cx="28" cy="28" r="24" />
+        <circle class="p" cx="28" cy="28" r="24" /></svg
+      ><svg
+        class="ar"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        style="transform: none"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (() => {
+        try {
+          if (!matchMedia("(pointer:fine)").matches) return;
+          const dot = document.getElementById("dot"),
+            ring = document.getElementById("ring"),
+            lab = ring.firstElementChild;
+          let mx = 0,
+            my = 0,
+            rx = 0,
+            ry = 0,
+            seen = 0,
+            sc = 1,
+            st = 1;
+          dot.style.opacity = ring.style.opacity = 0;
+          addEventListener(
+            "pointermove",
+            (e) => {
+              mx = e.clientX;
+              my = e.clientY;
+              dot.style.transform = `translate3d(${mx}px,${my}px,0)`;
+              if (!seen) {
+                seen = 1;
+                rx = mx;
+                ry = my;
+                dot.style.opacity = ring.style.opacity = 1;
+              }
+            },
+            { passive: true },
+          );
+          (function lp() {
+            rx += (mx - rx) * 0.22;
+            ry += (my - ry) * 0.22;
+            sc += (st - sc) * 0.2;
+            ring.style.transform = `translate3d(${rx}px,${ry}px,0) scale(${sc})`;
+            requestAnimationFrame(lp);
+          })();
+          document.addEventListener(
+            "pointerover",
+            (e) => {
+              const t = e.target,
+                c = t.closest && t.closest("[data-cur]");
+              if (c) {
+                lab.textContent = c.dataset.cur;
+                ring.classList.add("big");
+                st = 2;
+              } else {
+                ring.classList.remove("big");
+                st =
+                  t.closest && t.closest("a,button,.fld,.accordion-button")
+                    ? 1.5
+                    : 1;
+              }
+            },
+            { passive: true },
+          );
+        } catch (err) {}
+      })();
+    </script>
+    <script>
+      gsap.registerPlugin(
+        ScrollTrigger,
+        ScrollToPlugin,
+        ScrollSmoother,
+        SplitText,
       );
-      lg = lightGallery(document.getElementById("grid"), {
-        selector: ".lg-on",
-        plugins: [lgThumbnail, lgZoom],
-        speed: 500,
-        licenseKey: "0000-0000-000-0000",
-      });
-    }
+      ScrollTrigger.config({ ignoreMobileResize: true });
+      const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches,
+        fine = matchMedia("(pointer:fine)").matches;
 
-    /* ---- smooth scroll + nav ---- */
-    const smoother = reduce
-      ? null
-      : ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1.2,
-        effects: true,
+      /* ---- content (edit here) ---- */
+      const skills = [
+        "MongoDB",
+        "Express.js",
+        "React",
+        "Node.js",
+        "REST APIs",
+        "JWT Auth",
+        "Redux",
+        "Tailwind",
+      ];
+      $("#mq").html(
+        [...skills, ...skills, ...skills]
+          .map((s) => `<span>${s}</span>`)
+          .join(""),
+      );
+      $("#tiles").html(
+        [
+          [
+            "M",
+            "MongoDB",
+            "Flexible schemas, indexing and aggregation pipelines.",
+          ],
+          ["E", "Express.js", "Clean, secure REST APIs with solid middleware."],
+          ["R", "React", "Fast, reusable UIs with hooks and state management."],
+          [
+            "N",
+            "Node.js",
+            "Scalable servers, real-time sockets and background jobs.",
+          ],
+        ]
+          .map(
+            (t) =>
+              `<div class="col-md-6 col-lg-3"><div class="glass tile tilt rv"><div class="big gt">${t[0]}</div><h3>${t[1]}</h3><p>${t[2]}</p></div></div>`,
+          )
+          .join(""),
+      );
+      $("#acc").html(
+        [
+          [
+            "Full-stack web apps",
+            "Complete MERN products: database design, API, admin panel and a polished front end.",
+          ],
+          [
+            "REST APIs and authentication",
+            "Secure endpoints with JWT, role-based access, validation and clear documentation.",
+          ],
+          [
+            "Real-time features",
+            "Live chat, notifications and dashboards using Socket.io.",
+          ],
+          [
+            "Deployment and performance",
+            "Cloud hosting, CI/CD, caching and speed tuning so your app stays fast.",
+          ],
+        ]
+          .map(
+            (s, i) =>
+              `<div class="accordion-item glass rv"><h3><button class="accordion-button ${i ? "collapsed" : ""}" data-bs-toggle="collapse" data-bs-target="#a${i}">${s[0]}</button></h3><div id="a${i}" class="accordion-collapse collapse ${i ? "" : "show"}" data-bs-parent="#acc"><div class="accordion-body pt-0"><p>${s[1]}</p></div></div></div>`,
+          )
+          .join(""),
+      );
+      const art = (t, i, w, h, sub) => {
+        const x = [0.2, 0.7, 0.4, 0.8, 0.3, 0.6][i % 6] * w,
+          y = [0.3, 0.6, 0.7, 0.25, 0.55, 0.4][i % 6] * h,
+          fs = Math.min(h * 0.15, (w * 0.7) / Math.max(t.length * 0.55, 2)),
+          s = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${w} ${h}'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f7e3a1'/><stop offset='1' stop-color='#a67a1e'/></linearGradient><radialGradient id='r'><stop offset='0' stop-color='#f7e3a1' stop-opacity='.9'/><stop offset='1' stop-color='#d4a73c' stop-opacity='0'/></radialGradient><linearGradient id='p' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#fff' stop-opacity='.32'/><stop offset='1' stop-color='#fff' stop-opacity='.03'/></linearGradient></defs><rect width='${w}' height='${h}' fill='#070707'/><circle cx='${x}' cy='${y}' r='${h * 0.5}' fill='url(#r)' opacity='.75'/><circle cx='${w - x}' cy='${h - y}' r='${h * 0.28}' fill='url(#r)' opacity='.4'/><g stroke='#fff' stroke-opacity='.06'>${[...Array(12)].map((_, k) => `<path d='M${(k * w) / 11} 0V${h}M0 ${(k * h) / 11}H${w}'/>`).join("")}</g><rect x='${w * 0.12}' y='${h * 0.2}' width='${w * 0.76}' height='${h * 0.6}' rx='${h * 0.05}' fill='url(#p)' stroke='#fff' stroke-opacity='.45'/><text x='${w / 2}' y='${h * 0.52}' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='${fs}' fill='url(#g)'>${t}</text><text x='${w / 2}' y='${h * 0.62}' text-anchor='middle' font-family='Arial,sans-serif' font-size='${h * 0.03}' letter-spacing='${h * 0.01}' fill='#fff' fill-opacity='.8'>${sub || ""}</text><g fill='#f7e3a1' fill-opacity='.55'><rect x='${w * 0.2}' y='${h * 0.7}' width='${w * 0.3}' height='${h * 0.012}' rx='4'/><rect x='${w * 0.2}' y='${h * 0.73}' width='${w * 0.45}' height='${h * 0.012}' rx='4' fill-opacity='.3'/></g></svg>`;
+        return "data:image/svg+xml," + encodeURIComponent(s);
+      };
+      $("#hi").attr("src", art("HM", 0, 700, 940, "MERN STACK DEVELOPER"));
+      const sk = [
+          ["React", "front"],
+          ["Tailwind CSS", "front"],
+          ["Node.js", "back"],
+          ["Express.js", "back"],
+          ["Socket.io", "back"],
+          ["MongoDB", "data"],
+          ["Mongoose", "data"],
+          ["GitHub", "tools"],
+          ["Postman", "tools"],
+        ],
+        cl = {
+          front: "Frontend",
+          back: "Backend",
+          data: "Database",
+          tools: "Tools",
+        };
+      $("#grid").html(
+        sk
+          .map(
+            (w, i) =>
+              `<div class="col-md-6 col-lg-4 p-item ${w[1]}"><a class="glass" data-cur="View" href="${art(w[0], i, 1600, 1100, cl[w[1]].toUpperCase())}" data-sub-html="<h4>${w[0]}</h4><p>Part of my MERN toolkit</p>"><img alt="${w[0]}" src="${art(w[0], i, 800, 600, cl[w[1]].toUpperCase())}"><div class="cap"><span>${w[0]}</span><span class="text-warning">${cl[w[1]]}</span></div></a></div>`,
+          )
+          .join(""),
+      );
+      $("#tms").html(
+        [
+          ["01", "Learning the web", "HTML, CSS and JavaScript fundamentals."],
+          [
+            "02",
+            "Building with React",
+            "Components, hooks and state management.",
+          ],
+          [
+            "03",
+            "Backend with Node",
+            "APIs, authentication and middleware with Express.",
+          ],
+          [
+            "04",
+            "Data with MongoDB",
+            "Schema design, Mongoose and aggregation.",
+          ],
+          [
+            "05",
+            "Full-stack products",
+            "Joining everything into real, deployed apps.",
+          ],
+          ["06", "What is next", "Scaling, performance and real-time systems."],
+        ]
+          .map(
+            (t) =>
+              `<div class="swiper-slide"><div class="glass tm"><div class="big gt">${t[0]}</div><h3 class="mt-3">${t[1]}</h3><p class="mt-2">${t[2]}</p></div></div>`,
+          )
+          .join(""),
+      );
+
+      /* ---- libraries ---- */
+      new Swiper(".swiper", {
+        loop: true,
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        speed: 700,
+        autoplay: { delay: 4200, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        breakpoints: {
+          768: { slidesPerView: 2 },
+          1200: { slidesPerView: 2.4 },
+        },
       });
-    const go = (id) =>
-      smoother
-        ? smoother.scrollTo(id, true, "top 90px")
-        : gsap.to(window, {
-          scrollTo: { y: id, offsetY: 90 },
-          duration: 1.1,
-          ease: "power3.inOut",
+      let lg, $g;
+      function initLG() {
+        lg && lg.destroy();
+        $("#grid a").removeClass("lg-on");
+        $g.isotope("getFilteredItemElements").forEach((e) =>
+          e.querySelector("a").classList.add("lg-on"),
+        );
+        lg = lightGallery(document.getElementById("grid"), {
+          selector: ".lg-on",
+          plugins: [lgThumbnail, lgZoom],
+          speed: 500,
+          licenseKey: "0000-0000-000-0000",
         });
-    $("[data-go]").on("click", function (e) {
-      e.preventDefault();
-      go($(this).attr("href"));
-    });
-    ["home", "about", "stack", "services", "work"].forEach((id) =>
-      ScrollTrigger.create({
-        trigger: "#" + id,
-        start: "top 55%",
-        end: "bottom 55%",
-        onToggle: (s) =>
-          s.isActive &&
-          $("#nav li a")
-            .removeClass("on")
-            .filter('[href="#' + id + '"]')
-            .addClass("on"),
-      }),
-    );
-    gsap.to("#bar", {
-      scaleX: 1,
-      ease: "none",
-      scrollTrigger: { start: 0, end: "max", scrub: 0.3 },
-    });
+      }
 
-    /* ---- reveals ---- */
-    gsap.set(".rv", { opacity: 0, y: 50 });
-    ScrollTrigger.batch(".rv", {
-      start: "top 92%",
-      once: true,
-      onEnter: (b) =>
-        gsap.to(b, {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.1,
-          ease: "power3.out",
-          overwrite: true,
+      /* ---- smooth scroll + nav ---- */
+      const smoother = reduce
+        ? null
+        : ScrollSmoother.create({
+            wrapper: "#smooth-wrapper",
+            content: "#smooth-content",
+            smooth: 1.2,
+            effects: true,
+          });
+      const go = (id) =>
+        smoother
+          ? smoother.scrollTo(id, true, "top 90px")
+          : gsap.to(window, {
+              scrollTo: { y: id, offsetY: 90 },
+              duration: 1.1,
+              ease: "power3.inOut",
+            });
+      $("[data-go]").on("click", function (e) {
+        e.preventDefault();
+        go($(this).attr("href"));
+      });
+      ["home", "about", "stack", "services", "work"].forEach((id) =>
+        ScrollTrigger.create({
+          trigger: "#" + id,
+          start: "top 55%",
+          end: "bottom 55%",
+          onToggle: (s) =>
+            s.isActive &&
+            $("#nav li a")
+              .removeClass("on")
+              .filter('[href="#' + id + '"]')
+              .addClass("on"),
         }),
-    });
-    gsap.utils
-      .toArray(".split")
-      .forEach((el) =>
-        SplitText.create(el, {
+      );
+      gsap.to("#bar", {
+        scaleX: 1,
+        ease: "none",
+        scrollTrigger: { start: 0, end: "max", scrub: 0.3 },
+      });
+
+      /* ---- reveals ---- */
+      gsap.set(".rv", { opacity: 0, y: 50 });
+      ScrollTrigger.batch(".rv", {
+        start: "top 92%",
+        once: true,
+        onEnter: (b) =>
+          gsap.to(b, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power3.out",
+            overwrite: true,
+          }),
+      });
+      gsap.utils
+        .toArray(".split")
+        .forEach((el) =>
+          SplitText.create(el, {
+            type: "lines,words",
+            mask: "lines",
+            autoSplit: true,
+            onSplit: (s) =>
+              gsap.from(s.words, {
+                yPercent: 110,
+                duration: 0.9,
+                stagger: 0.05,
+                ease: "power4.out",
+                scrollTrigger: { trigger: el, start: "top 88%", once: true },
+              }),
+          }),
+        );
+      $("[data-n]").each(function () {
+        const o = { v: 0 },
+          n = +this.dataset.n,
+          el = this;
+        ScrollTrigger.create({
+          trigger: el,
+          start: "top 92%",
+          once: true,
+          onEnter: () =>
+            gsap.to(o, {
+              v: n,
+              duration: 2,
+              ease: "power2.out",
+              onUpdate: () => (el.textContent = Math.round(o.v)),
+            }),
+        });
+      });
+
+      /* ---- gold cursor: dot + trailing ring with labels ---- */
+      if (fine) {
+        $(".mag").each(function () {
+          const x = gsap.quickTo(this, "x", { duration: 0.5, ease: "power3" }),
+            y = gsap.quickTo(this, "y", { duration: 0.5, ease: "power3" });
+          $(this)
+            .on("pointermove", (e) => {
+              const r = this.getBoundingClientRect();
+              x((e.clientX - r.left - r.width / 2) * 0.3);
+              y((e.clientY - r.top - r.height / 2) * 0.3);
+            })
+            .on("pointerleave", () => {
+              x(0);
+              y(0);
+            });
+        });
+        $(".glass")
+          .not("#nav,#toast,#top")
+          .each(function () {
+            const a = gsap.quickTo(this, "rotationX", { duration: 0.5 }),
+              b = gsap.quickTo(this, "rotationY", { duration: 0.5 });
+            gsap.set(this, { transformPerspective: 900 });
+            $(this)
+              .on("pointermove", (e) => {
+                if (this._p) return;
+                this._p = 1;
+                requestAnimationFrame(() => {
+                  this._p = 0;
+                  const r = this.getBoundingClientRect(),
+                    px = (e.clientX - r.left) / r.width,
+                    py = (e.clientY - r.top) / r.height;
+                  b((px - 0.5) * 10);
+                  a((0.5 - py) * 10);
+                  this.style.setProperty("--mx", px * 100 + "%");
+                  this.style.setProperty("--my", py * 100 + "%");
+                });
+              })
+              .on("pointerleave", () => {
+                a(0);
+                b(0);
+              });
+          });
+      }
+
+      /* ---- name preloader, then page intro ---- */
+      SplitText.create("#pnm", {
+        type: "chars",
+        onSplit: (s) => {
+          gsap.set(s.chars, { opacity: 0, y: 14 });
+        },
+      });
+      $(window).on("load", () => {
+        $g = $("#grid").isotope({
+          itemSelector: ".p-item",
+          layoutMode: "fitRows",
+          percentPosition: true,
+          transitionDuration: ".55s",
+        });
+        initLG();
+        $g.on("arrangeComplete", () => {
+          initLG();
+          ScrollTrigger.refresh();
+        });
+        $(".flt").on("click", function () {
+          $(".flt").removeClass("on");
+          $(this).addClass("on");
+          $g.isotope({ filter: this.dataset.f });
+        });
+        let hw = [],
+          introDone = false;
+        SplitText.create("#ht", {
           type: "lines,words",
           mask: "lines",
           autoSplit: true,
-          onSplit: (s) =>
-            gsap.from(s.words, {
-              yPercent: 110,
-              duration: 0.9,
-              stagger: 0.05,
-              ease: "power4.out",
-              scrollTrigger: { trigger: el, start: "top 88%", once: true },
-            }),
-        }),
-      );
-    $("[data-n]").each(function () {
-      const o = { v: 0 },
-        n = +this.dataset.n,
-        el = this;
-      ScrollTrigger.create({
-        trigger: el,
-        start: "top 92%",
-        once: true,
-        onEnter: () =>
-          gsap.to(o, {
-            v: n,
-            duration: 2,
-            ease: "power2.out",
-            onUpdate: () => (el.textContent = Math.round(o.v)),
-          }),
-      });
-    });
-
-    /* ---- gold cursor: dot + trailing ring with labels ---- */
-    if (fine) {
-      const dx = gsap.quickTo("#dot", "x", { duration: 0.08 }),
-        dy = gsap.quickTo("#dot", "y", { duration: 0.08 }),
-        rx = gsap.quickTo("#ring", "x", { duration: 0.45, ease: "power3" }),
-        ry = gsap.quickTo("#ring", "y", { duration: 0.45, ease: "power3" });
-      addEventListener(
-        "pointermove",
-        (e) => {
-          dx(e.clientX);
-          dy(e.clientY);
-          rx(e.clientX);
-          ry(e.clientY);
-        },
-        { passive: true },
-      );
-      $(document)
-        .on("mouseenter", "a,button,.fld,.accordion-button", () =>
-          gsap.to("#ring", { scale: 1.5, duration: 0.3 }),
-        )
-        .on("mouseleave", "a,button,.fld,.accordion-button", () =>
-          gsap.to("#ring", { scale: 1, duration: 0.3 }),
-        );
-      $(document)
-        .on("mouseenter", "[data-cur]", function () {
-          $("#ring span").text(this.dataset.cur);
-          $("#ring").addClass("big");
-          gsap.to("#ring", { scale: 2, duration: 0.3 });
-        })
-        .on("mouseleave", "[data-cur]", () => {
-          $("#ring").removeClass("big");
-          gsap.to("#ring", { scale: 1, duration: 0.3 });
+          onSplit: (s) => {
+            hw = s.words;
+            hw.slice(1).forEach((w) => w.classList.add("gt"));
+            if (!introDone) gsap.set(hw, { yPercent: 115 });
+            gsap.set("#ht", { visibility: "visible" });
+          },
         });
-      $(".mag").each(function () {
-        const x = gsap.quickTo(this, "x", { duration: 0.5, ease: "power3" }),
-          y = gsap.quickTo(this, "y", { duration: 0.5, ease: "power3" });
-        $(this)
-          .on("pointermove", (e) => {
-            const r = this.getBoundingClientRect();
-            x((e.clientX - r.left - r.width / 2) * 0.3);
-            y((e.clientY - r.top - r.height / 2) * 0.3);
+        gsap.set(".hero .arch,.hero .spin", { opacity: 0, scale: 0.92, y: 60 });
+        gsap.set(".hero .col-lg-7>:not(h1)", { opacity: 0, y: 30 });
+        const o = { v: 0 };
+        gsap
+          .timeline()
+          .to("#pre text", {
+            strokeDashoffset: 0,
+            duration: 1.6,
+            ease: "power2.inOut",
           })
-          .on("pointerleave", () => {
-            x(0);
-            y(0);
-          });
-      });
-      $(".glass")
-        .not("#nav,#toast,#top")
-        .each(function () {
-          const a = gsap.quickTo(this, "rotationX", { duration: 0.5 }),
-            b = gsap.quickTo(this, "rotationY", { duration: 0.5 });
-          gsap.set(this, { transformPerspective: 900 });
-          $(this)
-            .on("pointermove", (e) => {
-              const r = this.getBoundingClientRect(),
-                px = (e.clientX - r.left) / r.width,
-                py = (e.clientY - r.top) / r.height;
-              b((px - 0.5) * 10);
-              a((0.5 - py) * 10);
-              this.style.setProperty("--mx", px * 100 + "%");
-              this.style.setProperty("--my", py * 100 + "%");
-            })
-            .on("pointerleave", () => {
-              a(0);
-              b(0);
-            });
-        });
-    }
-
-    /* ---- name preloader, then page intro ---- */
-    SplitText.create("#pnm", {
-      type: "chars",
-      onSplit: (s) => {
-        gsap.set(s.chars, { opacity: 0, y: 14 });
-      },
-    });
-    $(window).on("load", () => {
-      $g = $("#grid").isotope({
-        itemSelector: ".p-item",
-        layoutMode: "fitRows",
-        percentPosition: true,
-        transitionDuration: ".55s",
-      });
-      initLG();
-      $g.on("arrangeComplete", () => {
-        initLG();
+          .to(
+            "#pre text",
+            { fill: "rgba(212,167,60,1)", duration: 0.6 },
+            "-=.3",
+          )
+          .to("#pnm div,#pnm", { opacity: 1, duration: 0.1 }, 0)
+          .to(
+            "#pnm div",
+            { opacity: 1, y: 0, stagger: 0.04, duration: 0.5 },
+            0.3,
+          )
+          .to(
+            o,
+            {
+              v: 100,
+              duration: 1.8,
+              ease: "power2.inOut",
+              onUpdate: () => {
+                $("#cnt").text(Math.round(o.v) + "%");
+                gsap.set("#pb", { scaleX: o.v / 100 });
+              },
+            },
+            0,
+          )
+          .to("#pre .mid", { opacity: 0, y: -20, duration: 0.5 }, "+=.2")
+          .to(
+            ".cur-t",
+            { yPercent: -100, duration: 1, ease: "expo.inOut" },
+            "<.2",
+          )
+          .to(".cur-b", { yPercent: 100, duration: 1, ease: "expo.inOut" }, "<")
+          .add("reveal", "-=.6")
+          .add(() => {
+            window.__intro = 1;
+            dispatchEvent(new Event("intro"));
+          }, "reveal")
+          .add(
+            () =>
+              gsap.to(hw, {
+                yPercent: 0,
+                duration: 1.1,
+                stagger: 0.08,
+                ease: "expo.out",
+              }),
+            "reveal",
+          )
+          .to(
+            ".hero .arch,.hero .spin",
+            {
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              duration: 1.2,
+              stagger: 0.15,
+              ease: "power3.out",
+            },
+            "reveal+=.2",
+          )
+          .to(
+            ".hero .col-lg-7>:not(h1)",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.9,
+              stagger: 0.12,
+              ease: "power3.out",
+            },
+            "reveal+=.5",
+          )
+          .add(() => {
+            $("#pre").hide();
+            introDone = true;
+          }, "reveal+=.6");
         ScrollTrigger.refresh();
       });
-      $(".flt").on("click", function () {
-        $(".flt").removeClass("on");
-        $(this).addClass("on");
-        $g.isotope({ filter: this.dataset.f });
+      gsap.set("#top", { autoAlpha: 0, scale: 0.7 });
+      gsap.to("#top .p", {
+        strokeDashoffset: 0,
+        ease: "none",
+        scrollTrigger: { start: 0, end: "max", scrub: 0.3 },
       });
-      let hw = [],
-        introDone = false;
-      SplitText.create("#ht", {
-        type: "lines,words",
-        mask: "lines",
-        autoSplit: true,
-        onSplit: (s) => {
-          hw = s.words;
-          hw.slice(1).forEach((w) => w.classList.add("gt"));
-          if (!introDone) gsap.set(hw, { yPercent: 115 });
-          gsap.set("#ht", { visibility: "visible" });
-        },
+      ScrollTrigger.create({
+        start: 600,
+        end: "max",
+        onToggle: (t) =>
+          gsap.to("#top", {
+            autoAlpha: t.isActive ? 1 : 0,
+            scale: t.isActive ? 1 : 0.7,
+            duration: 0.4,
+            ease: "power3.out",
+          }),
       });
-      gsap.set(".hero .arch,.hero .spin", { opacity: 0, scale: 0.92, y: 60 });
-      gsap.set(".hero .col-lg-7>:not(h1)", { opacity: 0, y: 30 });
-      const o = { v: 0 };
-      gsap
-        .timeline()
-        .to("#pre text", {
-          strokeDashoffset: 0,
-          duration: 1.6,
-          ease: "power2.inOut",
-        })
-        .to(
-          "#pre text",
-          { fill: "rgba(212,167,60,1)", duration: 0.6 },
-          "-=.3",
-        )
-        .to("#pnm div,#pnm", { opacity: 1, duration: 0.1 }, 0)
-        .to(
-          "#pnm div",
-          { opacity: 1, y: 0, stagger: 0.04, duration: 0.5 },
-          0.3,
-        )
-        .to(
-          o,
-          {
-            v: 100,
-            duration: 1.8,
-            ease: "power2.inOut",
-            onUpdate: () => {
-              $("#cnt").text(Math.round(o.v) + "%");
-              gsap.set("#pb", { scaleX: o.v / 100 });
-            },
-          },
-          0,
-        )
-        .to("#pre .mid", { opacity: 0, y: -20, duration: 0.5 }, "+=.2")
-        .to(
-          ".cur-t",
-          { yPercent: -100, duration: 1, ease: "expo.inOut" },
-          "<.2",
-        )
-        .to(".cur-b", { yPercent: 100, duration: 1, ease: "expo.inOut" }, "<")
-        .add("reveal", "-=.6")
-        .add(
-          () =>
-            gsap.to(hw, {
-              yPercent: 0,
-              duration: 1.1,
-              stagger: 0.08,
-              ease: "expo.out",
+      $("#top").on("click", () =>
+        smoother
+          ? smoother.scrollTo(0, true)
+          : gsap.to(window, {
+              scrollTo: 0,
+              duration: 1.2,
+              ease: "power3.inOut",
             }),
-          "reveal",
-        )
-        .to(
-          ".hero .arch,.hero .spin",
-          {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power3.out",
+      );
+      $("#f").on("submit", function (e) {
+        e.preventDefault();
+        this.reset();
+        gsap
+          .timeline()
+          .to("#toast", { y: 0, duration: 0.6, ease: "back.out(1.6)" })
+          .to("#toast", { y: 130, delay: 3, duration: 0.5 });
+      });
+    </script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      import { FontLoader } from "three/addons/loaders/FontLoader.js";
+      import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
+      import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+      const cv = document.getElementById("gl");
+      try {
+        const mob = innerWidth < 768;
+        const R = new THREE.WebGLRenderer({
+          canvas: cv,
+          alpha: true,
+          antialias: !mob,
+          powerPreference: "high-performance",
+        });
+        let dpr = Math.min(devicePixelRatio, mob ? 1.25 : 1.5);
+        R.setPixelRatio(dpr);
+        R.toneMapping = THREE.ACESFilmicToneMapping;
+        R.toneMappingExposure = 1.15;
+        const S = new THREE.Scene(),
+          C = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+        C.position.z = 8;
+        S.environment = new THREE.PMREMGenerator(R).fromScene(
+          new RoomEnvironment(),
+          0.04,
+        ).texture;
+        const gold = new THREE.MeshStandardMaterial({
+          color: 0xf0d9a0,
+          metalness: 1,
+          roughness: 0.16,
+          envMapIntensity: 1.7,
+        });
+        const glass = new THREE.MeshPhysicalMaterial({
+          color: 0x14141a,
+          metalness: 1,
+          roughness: 0.08,
+          envMapIntensity: 2.2,
+          clearcoat: 1,
+        });
+        const L = new THREE.DirectionalLight(0xfff3d6, 2.2);
+        L.position.set(3, 4, 5);
+        S.add(L);
+        const PL = new THREE.PointLight(0xfff2cf, 40, 20);
+        S.add(PL);
+        const PL2 = new THREE.PointLight(0xfff0c8, 22, 8);
+        const mk = (g, m) => {
+          const o = new THREE.Mesh(g, m);
+          o.visible = false;
+          S.add(o);
+          return o;
+        };
+        /* floating 3D objects, each anchored to a page section */
+        const items = [
+          [
+            "#about",
+            0.92,
+            new THREE.TorusKnotGeometry(0.8, 0.28, 120, 18),
+            gold,
+          ],
+          ["#stack", 0.06, new THREE.IcosahedronGeometry(1, 0), glass],
+          ["#services", 0.93, new THREE.TorusGeometry(0.9, 0.32, 24, 64), gold],
+          ["#work", 0.06, new THREE.OctahedronGeometry(1.1), glass],
+          ["#contact", 0.92, new THREE.DodecahedronGeometry(1, 0), gold],
+        ].map((a) => ({
+          el: document.querySelector(a[0]),
+          fx: a[1],
+          m: mk(a[2], a[3]),
+        }));
+        const st = () => {
+            const q = ScrollSmoother.get();
+            return q ? q.scrollTop() : scrollY;
           },
-          "reveal+=.2",
-        )
-        .to(
-          ".hero .col-lg-7>:not(h1)",
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            stagger: 0.12,
-            ease: "power3.out",
+          cache = () =>
+            items.forEach((it) => {
+              const r = it.el.getBoundingClientRect();
+              it.top = r.top + st();
+              it.h = r.height;
+            });
+        cache();
+        ScrollTrigger.addEventListener("refresh", cache);
+        setInterval(cache, 2000);
+        /* hero: gold MHM inside a clear glass ring */
+        const hero = new THREE.Group();
+        hero.visible = false;
+        S.add(hero);
+        hero.add(PL2);
+        const ring = new THREE.Mesh(
+          new THREE.TorusGeometry(1.45, 0.08, 28, 128),
+          new THREE.MeshPhysicalMaterial({
+            color: 0xffffff,
+            roughness: 0.02,
+            transparent: true,
+            opacity: 0.4,
+            envMapIntensity: 2.4,
+            clearcoat: 1,
+            clearcoatRoughness: 0,
+          }),
+        );
+        hero.add(ring);
+        const gc = document.createElement("canvas");
+        gc.width = gc.height = 128;
+        const gx = gc.getContext("2d"),
+          gr = gx.createRadialGradient(64, 64, 0, 64, 64, 64);
+        gr.addColorStop(0, "rgba(250,238,200,.9)");
+        gr.addColorStop(0.4, "rgba(236,212,150,.3)");
+        gr.addColorStop(1, "rgba(236,212,150,0)");
+        gx.fillStyle = gr;
+        gx.fillRect(0, 0, 128, 128);
+        const glow = new THREE.Sprite(
+          new THREE.SpriteMaterial({
+            map: new THREE.CanvasTexture(gc),
+            transparent: true,
+            opacity: 0.3,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending,
+          }),
+        );
+        glow.position.z = -0.8;
+        glow.scale.setScalar(5);
+        hero.add(glow);
+        const mg = new THREE.MeshStandardMaterial({
+          color: 0xf2dea6,
+          metalness: 1,
+          roughness: 0.17,
+          envMapIntensity: 1.9,
+        });
+        new FontLoader().load(
+          "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/fonts/droid/droid_serif_bold.typeface.json",
+          (f) => {
+            const g = new TextGeometry("MHM", {
+              font: f,
+              size: 1,
+              height: 0.42,
+              curveSegments: 14,
+              bevelEnabled: true,
+              bevelThickness: 0.05,
+              bevelSize: 0.035,
+              bevelSegments: 8,
+            });
+            g.center();
+            g.computeBoundingBox();
+            const m = new THREE.Mesh(g, mg);
+            m.scale.setScalar(
+              2.15 / (g.boundingBox.max.x - g.boundingBox.min.x),
+            );
+            hero.add(m);
+            document.getElementById("hi").style.display = "none";
           },
-          "reveal+=.5",
-        )
-        .add(() => {
-          $("#pre").hide();
-          introDone = true;
-        }, "reveal+=.6");
-      ScrollTrigger.refresh();
-    });
-    gsap.set("#top", { autoAlpha: 0, scale: 0.7 });
-    gsap.to("#top .p", {
-      strokeDashoffset: 0,
-      ease: "none",
-      scrollTrigger: { start: 0, end: "max", scrub: 0.3 },
-    });
-    ScrollTrigger.create({
-      start: 600,
-      end: "max",
-      onToggle: (t) =>
-        gsap.to("#top", {
-          autoAlpha: t.isActive ? 1 : 0,
-          scale: t.isActive ? 1 : 0.7,
-          duration: 0.4,
-          ease: "power3.out",
-        }),
-    });
-    $("#top").on("click", () =>
-      smoother
-        ? smoother.scrollTo(0, true)
-        : gsap.to(window, {
-          scrollTo: 0,
-          duration: 1.2,
-          ease: "power3.inOut",
-        }),
-    );
-    $("#f").on("submit", function (e) {
-      e.preventDefault();
-      this.reset();
-      gsap
-        .timeline()
-        .to("#toast", { y: 0, duration: 0.6, ease: "back.out(1.6)" })
-        .to("#toast", { y: 130, delay: 3, duration: 0.5 });
-    });
-  </script>
-</body>
-
+          undefined,
+          () => {},
+        );
+        /* gold dust */
+        const n = mob ? 300 : 900,
+          pa = new Float32Array(n * 3);
+        for (let i = 0; i < n * 3; i += 3) {
+          pa[i] = (Math.random() - 0.5) * 30;
+          pa[i + 1] = (Math.random() - 0.5) * 44;
+          pa[i + 2] = -4 - Math.random() * 10;
+        }
+        const pg = new THREE.BufferGeometry();
+        pg.setAttribute("position", new THREE.BufferAttribute(pa, 3));
+        const pts = new THREE.Points(
+          pg,
+          new THREE.PointsMaterial({
+            color: 0xf7e3a1,
+            size: 0.06,
+            transparent: true,
+            opacity: 0.7,
+            depthWrite: false,
+          }),
+        );
+        S.add(pts);
+        const rs = () => {
+          R.setSize(innerWidth, innerHeight, false);
+          C.aspect = innerWidth / innerHeight;
+          C.updateProjectionMatrix();
+        };
+        rs();
+        addEventListener("resize", rs);
+        const px = { x: 0, y: 0 };
+        addEventListener(
+          "pointermove",
+          (e) => {
+            px.x = (e.clientX / innerWidth) * 2 - 1;
+            px.y = (e.clientY / innerHeight) * 2 - 1;
+          },
+          { passive: true },
+        );
+        let t0 = window.__intro ? performance.now() : 0;
+        addEventListener("intro", () => (t0 = performance.now()));
+        const arch = document.querySelector(".arch"),
+          clock = new THREE.Clock(),
+          vh = 2 * 8 * Math.tan(THREE.MathUtils.degToRad(20));
+        let lastY = 0,
+          vel = 0,
+          acc = 0,
+          fr = 0,
+          lvl = 0,
+          cap = false,
+          lastR = 0,
+          prv = performance.now();
+        if (location.hash == "#lite") {
+          document.documentElement.classList.add("l1", "l2");
+          cap = true;
+          dpr = 1.25;
+          R.setPixelRatio(dpr);
+          rs();
+        }
+        R.setAnimationLoop(() => {
+          const n0 = performance.now();
+          if (cap && n0 - lastR < 32) return;
+          lastR = n0;
+          const t = clock.getElapsedTime(),
+            H = innerHeight,
+            W = innerWidth,
+            k = vh / H,
+            a = t0 ? Math.min(1, (performance.now() - t0) / 1600) : 0,
+            e = a ? 1 + 2.7 * Math.pow(a - 1, 3) + 1.7 * Math.pow(a - 1, 2) : 0;
+          vel += (scrollY - lastY - vel) * 0.1;
+          lastY = scrollY;
+          const sy = st(),
+            nw = performance.now();
+          if (a >= 1) {
+            acc += nw - prv;
+            if (++fr >= 45) {
+              if (acc / fr > 24 && lvl < 3) {
+                lvl++;
+                const h = document.documentElement.classList;
+                if (lvl == 1) h.add("l1");
+                else if (lvl == 2) {
+                  h.add("l2");
+                  dpr = Math.max(1.25, dpr - 0.25);
+                  R.setPixelRatio(dpr);
+                  rs();
+                } else cap = true;
+              }
+              acc = fr = 0;
+            }
+          }
+          prv = nw;
+          C.lookAt(0, 0, 0);
+          PL.position.set(px.x * 5, -px.y * 3, 4);
+          const r = arch.getBoundingClientRect();
+          hero.visible = a > 0 && r.bottom > -100 && r.top < H + 100;
+          if (hero.visible) {
+            hero.scale.setScalar(((r.width * k) / 3.1) * 0.8 * e);
+            hero.position.set(
+              ((r.left + r.width / 2) / W - 0.5) * vh * (W / H),
+              (0.5 - (r.top + r.height / 2) / H) * vh,
+              0,
+            );
+            const tx = gsap.getProperty(arch, "rotationX") || 0,
+              ty = gsap.getProperty(arch, "rotationY") || 0,
+              w = Math.max(0, 1 - (Math.abs(tx) + Math.abs(ty)) / 4);
+            hero.rotation.y =
+              THREE.MathUtils.degToRad(ty) * 4 + Math.sin(t * 0.6) * 0.22 * w;
+            hero.rotation.x =
+              -THREE.MathUtils.degToRad(tx) * 4 + vel * 0.01 * w;
+            ring.rotation.x = t * 0.5;
+            ring.rotation.z = t * 0.3;
+            PL2.position.set(
+              Math.sin(t * 0.8) * 2.6,
+              Math.cos(t * 0.6) * 1.5,
+              2.2,
+            );
+            glow.material.opacity = 0.28 + Math.sin(t * 1.5) * 0.07;
+          }
+          items.forEach((it, i) => {
+            const m = it.m,
+              qt = it.top - sy;
+            m.visible = a > 0 && qt + it.h > -200 && qt < H + 200;
+            if (!m.visible) return;
+            m.position.set(
+              (it.fx - 0.5) * vh * (W / H),
+              (0.5 - (qt + it.h / 2) / H) * vh + Math.sin(t + i) * 0.15,
+              -1.2,
+            );
+            m.scale.setScalar(e * (mob ? 0.6 : 1));
+            m.rotation.set(t * 0.25 + vel * 0.02, t * 0.35 + i, 0);
+          });
+          pts.position.set(
+            Math.sin(t * 0.1) * 0.6,
+            scrollY * 0.0015 + Math.sin(t * 0.15) * 0.3,
+            0,
+          );
+          R.render(S, C);
+        });
+      } catch (err) {
+        cv.style.display = "none";
+      }
+    </script>
+  </body>
 </html>
